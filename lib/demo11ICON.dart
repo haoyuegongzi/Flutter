@@ -21,51 +21,51 @@ void main() {
 }
 
 // 下面使用Flutter系统自带的icon
-// class MyIcon extends StatelessWidget {
-//   const MyIcon({super.key});
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return const Center(
-//         child: Row(// Column: 列；Row: 行
-//           // 一个 图标list，图标都是系统自带的。分别是：搜索图标，主页图标，分类图标，购物图标
-//           children: [
-//             Icon(Icons.search,
-//                 color: Colors.red,
-//                 size: 40
-//             ),
-//             SizedBox(
-//                 height: 10
-//             ),
-//             Icon(
-//                 Icons.home,
-//               color: Colors.blue,
-//               size: 40,
-//             ),
-//             SizedBox(
-//                 height: 10
-//             ),
-//             Icon(
-//                 Icons.category,
-//               color: Colors.purple,
-//               size: 40,
-//             ),
-//             SizedBox(
-//                 height: 10
-//             ),
-//             Icon(
-//                 Icons.shop,
-//               color: Colors.cyan,
-//               size: 40,
-//             ),
-//             SizedBox(
-//                 height: 10
-//             ),
-//           ],
-//         )
-//     );
-//   }
-// }
+class MyIcon extends StatelessWidget {
+  const MyIcon({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+        child: Row(// Column: 列；Row: 行
+          // 一个 图标list，图标都是系统自带的。分别是：搜索图标，主页图标，分类图标，购物图标
+          children: [
+            Icon(Icons.search,
+                color: Colors.red,
+                size: 40
+            ),
+            SizedBox(
+                height: 10
+            ),
+            Icon(
+                Icons.home,
+              color: Colors.blue,
+              size: 40,
+            ),
+            SizedBox(
+                height: 10
+            ),
+            Icon(
+                Icons.category,
+              color: Colors.purple,
+              size: 40,
+            ),
+            SizedBox(
+                height: 10
+            ),
+            Icon(
+                Icons.shop,
+              color: Colors.cyan,
+              size: 40,
+            ),
+            SizedBox(
+                height: 10
+            ),
+          ],
+        )
+    );
+  }
+}
 
 // // 下面 我们开始自定义 icon
 class MyCustomerIcon extends StatelessWidget {
