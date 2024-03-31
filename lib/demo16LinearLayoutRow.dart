@@ -29,6 +29,7 @@ class LinearLayoutRowStaticParameter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      /// double.infinity 和double.maxFinite可以让当前元素的width或者height达到父元素的尺寸; 相当于 Android的 match_parent
       // double.nan: 取值为 0；
       // double.infinity: 1.0 / 0.0，亦即 正无穷大；
       // double.negativeInfinity: -infinity，亦即 负无穷小；
@@ -40,10 +41,12 @@ class LinearLayoutRowStaticParameter extends StatelessWidget {
       margin: const EdgeInsets.all(25),
       // alignment: Alignment.topLeft,
       child: const Row(
+        // mainAxisAlignment: 控制 水平方向  Item的位置布局关系；
         // MainAxisAlignment.spaceAround：将空闲宽度width 均匀地放置在子节点之间，
-        //                                并将该空间的一半放置在第一个和最后一个子节点的前后
-        //                                （最后这句话的意思是：第一个Item的前面占据每个Item
-        //                                所占空间的一半；最后一个Item的前面占据每个Item的另一半
+        //                   并将该空间的一半放置在第一个和最后一个子节点的前后（最后这句话的意思是：
+        //                   第一个Item的前面占据每个Item所占空间的一半；最后一个Item的前面占据
+        //                   每个Item的另一半。简单理解：相邻Item之间的间距是两边Item到边界的距离的2倍。
+        //
         //  MainAxisAlignment.spaceBetween：在水平方向，第一个Item左对齐，最后一个右对齐，
         //                                  其他Item均分剩余的水平宽度。
         // MainAxisAlignment.spaceEvenly：在水平方向，均分 宽度width
@@ -222,8 +225,13 @@ class MyContainer extends StatelessWidget {
   Color viewColor, parentColor;
   double viewSize;
 
-  MyContainer(this.viewColor, this.iconData, this.parentColor, this.viewSize,
-      {super.key});
+  MyContainer(
+      this.viewColor,
+      this.iconData,
+      this.parentColor,
+      this.viewSize,
+      {super.key}
+      );
 
   @override
   Widget build(BuildContext context) {
