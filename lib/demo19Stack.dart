@@ -29,8 +29,10 @@ class StackWidget extends StatelessWidget {
     return Container(
       color: Colors.teal,
       margin: const EdgeInsetsDirectional.all(20),
-      // alignment: 配置所有子元素的显示位置, 有十多个选项。
+      // 注意：相对于 父Widget/View 进行定位；如果没有 父Widget/View（比如这里没有 父Widget/View：Container），
+      // 那么久相对于整个屏幕（相当于Android中的根布局）进行定位。
       child: Stack(
+        // alignment: 配置所有子元素的显示位置, 有十多个选项。start、top、end、bottom、center相互组合；
         alignment: AlignmentDirectional.center,
         children: <Widget>[
           const SizedBox(
