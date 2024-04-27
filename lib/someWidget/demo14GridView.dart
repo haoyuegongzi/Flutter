@@ -1,5 +1,5 @@
 
-import './res/ListDataView.dart';
+import '../res/ListDataView.dart';
 import 'package:flutter/material.dart';
 
 main() {
