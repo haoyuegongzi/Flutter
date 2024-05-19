@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutterdemo/scaffold/demo3BillOrder.dart';
-import 'package:learnflutterdemo/scaffold/demo3Emergency.dart';
-import 'package:learnflutterdemo/scaffold/demo3HomePage.dart';
-import 'package:learnflutterdemo/scaffold/demo3Mine.dart';
+import 'package:learnflutterdemo/routers/BillOrder.dart';
+import 'package:learnflutterdemo/routers/Emergency.dart';
+import 'package:learnflutterdemo/routers/HomePage.dart';
+import 'package:learnflutterdemo/routers/Mine.dart';
 
+// routers: 路由，通俗的将，就是界面跳转，就像 Android中的 startActivity，或者 Fragment 切换；
+// 在Flutter中通过 Navigator组件 管理路由导航。并提供了管理堆栈的方法。如：Navigator.push和Navigator.pop。
+// Flutter中给我们提供了两种配置路由跳转的方式：
+//                  1、基本路由 2、命名路由
 main() {
   runApp(MaterialApp(
     title: "有选择状态的导航bar",
@@ -28,6 +32,37 @@ class CreateHomeTab extends State<HomeTab> {
   final List<Widget> widgetList = const[
     HomePageWidget(), BillOerder(),
     Emergency(), MinePage()
+  ];
+
+  final List<BottomNavigationBarItem> bottomNavigationList = const[
+    BottomNavigationBarItem(
+        icon: Icon(
+          Icons.account_balance,
+          color: Colors.black26,
+        ),
+        label: "首页",
+        backgroundColor: Colors.blueGrey),
+    BottomNavigationBarItem(
+        icon: Icon(
+          Icons.add_chart,
+          color: Colors.black26,
+        ),
+        label: "账单",
+        backgroundColor: Colors.blueGrey),
+    BottomNavigationBarItem(
+        icon: Icon(
+          Icons.add_alarm_sharp,
+          color: Colors.black26,
+        ),
+        label: "紧急事件",
+        backgroundColor: Colors.blueGrey),
+    BottomNavigationBarItem(
+        icon: Icon(
+          Icons.account_circle,
+          color: Colors.black26,
+        ),
+        label: "我的",
+        backgroundColor: Colors.blueGrey)
   ];
 
   @override
@@ -60,7 +95,7 @@ class CreateHomeTab extends State<HomeTab> {
         unselectedIconTheme: const IconThemeData(
           color: Colors.black26
         ),
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.black12,
         iconSize: 18,
         // 下面几行是实现 底部导航栏 实现 点击选中 效果的关键；
         currentIndex: currenPosition,
@@ -69,36 +104,7 @@ class CreateHomeTab extends State<HomeTab> {
             currenPosition = index;
           });
         },
-        items: const [
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_balance,
-                color: Colors.black26,
-              ),
-              label: "首页",
-              backgroundColor: Colors.blueGrey),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add_chart,
-                color: Colors.black26,
-              ),
-              label: "账单",
-              backgroundColor: Colors.blueGrey),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add_alarm_sharp,
-                color: Colors.black26,
-              ),
-              label: "紧急事件",
-              backgroundColor: Colors.blueGrey),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.account_circle,
-                color: Colors.black26,
-              ),
-              label: "我的",
-              backgroundColor: Colors.blueGrey)
-        ],
+        items: bottomNavigationList,
       ),
     );
   }
