@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutterdemo/routers/BillOrder.dart';
-import 'package:learnflutterdemo/routers/Emergency.dart';
-import 'package:learnflutterdemo/routers/HomePage.dart';
-import 'package:learnflutterdemo/routers/Mine.dart';
+import 'package:learnflutterdemo/routers_base/BillOrder.dart';
+import 'package:learnflutterdemo/routers_base/Emergency.dart';
+import 'package:learnflutterdemo/routers_base/HomePageWidget.dart';
+import 'package:learnflutterdemo/routers_base/Mine.dart';
 
 // routers: 路由，通俗的将，就是界面跳转，就像 Android中的 startActivity，或者 Fragment 切换；
 // 在Flutter中通过 Navigator组件 管理路由导航。并提供了管理堆栈的方法。如：Navigator.push和Navigator.pop。
 // Flutter中给我们提供了两种配置路由跳转的方式：
 //                  1、基本路由 2、命名路由
+// 本示例学习 基本路由
 main() {
   runApp(MaterialApp(
     title: "有选择状态的导航bar",

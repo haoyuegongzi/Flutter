@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:learnflutterdemo/routers/SearchPage.dart';
-import 'package:learnflutterdemo/routers/SearchPageWithObject.dart';
-import 'package:learnflutterdemo/routers/SearchPageWithValue.dart';
+import 'package:learnflutterdemo/routers_base/SearchPage.dart';
+import 'package:learnflutterdemo/routers_base/SearchPageWithObject.dart';
+import 'package:learnflutterdemo/routers_base/SearchPageWithValue.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({super.key});
