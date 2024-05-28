@@ -37,8 +37,7 @@ class HomePageFunction extends State<ItemHomePage> {
           children: [
             ElevatedButton(
               onPressed: () {
-                Navigator
-                    .of(context)
+                Navigator.of(context)
                     .push(MaterialPageRoute(builder: (BuildContext context) {
                   return const Category();
                 }));
@@ -55,9 +54,7 @@ class HomePageFunction extends State<ItemHomePage> {
             TextButton(
               onPressed: () {
                 print("命名路由 跳转去search页面");
-                Navigator
-                    .of(context)
-                    .pushNamed("/search");
+                Navigator.of(context).pushNamed("/search");
               },
               child: const Text(
                   "通过命名路由 跳转去search页面",
@@ -70,10 +67,21 @@ class HomePageFunction extends State<ItemHomePage> {
             const Divider(),
             OutlinedButton(
               onPressed: () {
-                print("功能还未开发");
+                Map argumentsMap = {
+                  "title": "去 RoutesValues 路由页面",
+                  "aid": 20
+                };
+                print(argumentsMap);
+                Navigator.of(context).pushNamed("/values",
+                    arguments: argumentsMap
+                );
+                // Navigator.pushNamed(context, "/values",
+                //     arguments: argumentsMap
+                // );
+
               },
               child: const Text(
-                  "带参跳转的命名路由实现",
+                  "命名路由传值",
                   style: TextStyle(
                       fontSize: 14,
                       color: Colors.teal,
