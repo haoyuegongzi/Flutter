@@ -4,12 +4,12 @@ import 'package:learnflutterdemo/routers_by_name_with_value/ItemHomePage.dart';
 import 'package:learnflutterdemo/routers_by_name_with_value/utils/routers.dart';
 
 void main() {
-  runApp(RoutersName());
+  runApp(const RoutersName());
 }
 
 class RoutersName extends StatelessWidget {
 
-  RoutersName({super.key});
+  const RoutersName({super.key});
 
   @override
   Widget build(BuildContext context) {

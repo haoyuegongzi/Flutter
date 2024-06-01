@@ -21,8 +21,8 @@ class RoutersName extends StatelessWidget {
     // 注意，注意，注意：context 后面的参数，必须是 / 只能是 / 唯一的 “arguments”；
     //                RoutesValues 的构造方法里面的 入参，必须跟 RoutesValues 的class类里面定义的一致；
     // 否则，会有意想不到的错误；这个算是固定写法；
-    // 下面的 RoutesValues() 的构造方法中，参数 values 是 RoutesValues() 的构造方法中的 入参；
-    //                                 参数 valuesRoute 则是 前面 指定的值类型
+    // 下面的 RoutesValues() 的构造方法中，参数 valuesRoute 是 RoutesValues() 的构造方法中的 入参；
+    //                                 参数 arguments 则是 前面 指定的值类型( context 后面大括号里面的那个 )
     "/values": (context, {arguments}) => RoutesValues(valuesRoute: arguments),
   };
 

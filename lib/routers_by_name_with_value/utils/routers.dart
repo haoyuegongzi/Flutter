@@ -17,23 +17,32 @@ final Map<String,Function> routesMap = {
   // 否则，会有意想不到的错误；这个算是固定写法；
   // 下面的 RoutesValues() 的构造方法中，参数 values 是 RoutesValues() 的构造方法中的 入参；
   //                                 参数 valuesRoute 则是 前面 指定的值类型
-  "/values": (context, {arguments}) => RoutesValues(valuesRoute: arguments),
+  "/RoutesValues": (context, {arguments}) => RoutesValues(valuesRoute: arguments),
 };
 
 Route<dynamic>? Function(RouteSettings) onGenerateRoute = (RouteSettings settings) {
   // 统一处理路由
   final String? name = settings.name;
   final Function? pageContentBuilder = routesMap[name];
+  // 这里的 settings 里面封装的就是 方法  Navigator.of(context).pushNamed(String, {Object? arguments})的入参；
+  // settings.name：是第一个入参，也就是 路由；settings.arguments：是第二个入参；也就是 传给下级界面的参数；
+  print("settings.name: ${settings.name}, settings.arguments： ${settings.arguments}, ");
+  print("settings: ${settings}");
 
   if (pageContentBuilder != null) {
+    // 这里的跳转，分有参跳转和无参跳转；
     if (settings.arguments != null) {
       Route route = MaterialPageRoute(
-          builder: (context) =>
-              pageContentBuilder(context, arguments: settings.arguments));
+          builder: (context) => pageContentBuilder(context, arguments: settings.arguments));
       return route;
     } else {
-      Route route =
-      MaterialPageRoute(builder: (context) => pageContentBuilder(context));
+      Route route = MaterialPageRoute(builder: (context) => pageContentBuilder(context));
+      //上面 这行代码 等价于下面的实现方式。不同的是，上面的代码是一种 动态实现，可以跳转到任何指定的界面；下面的，则只能跳转到特定界面；
+      // MaterialPageRoute(
+      //   builder: (context) {
+      //     return const RoutesSearchPageByName();
+      //   }
+      // );
       return route;
     }
   }
