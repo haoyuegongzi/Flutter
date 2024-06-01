@@ -69,10 +69,11 @@ class HomePageFunction extends State<ItemHomePage> {
               onPressed: () {
                 Map argumentsMap = {
                   "title": "去 RoutesValues 路由页面",
-                  "aid": 20
+                  "aid": 41
                 };
                 print(argumentsMap);
-                Navigator.of(context).pushNamed("/values",
+                // 下面两种方式都是可以成功跳转的。
+                Navigator.of(context).pushNamed("/RoutesValues",
                     arguments: argumentsMap
                 );
                 // Navigator.pushNamed(context, "/values",
