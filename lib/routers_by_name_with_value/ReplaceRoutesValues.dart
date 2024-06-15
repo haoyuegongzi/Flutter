@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class RoutesValues extends StatefulWidget {
+class ReplaceRoutesValues extends StatefulWidget {
   final Map valuesRoute;
 
-  const RoutesValues({super.key, required this.valuesRoute});
+  const ReplaceRoutesValues({super.key, required this.valuesRoute});
 
   @override
-  State<RoutesValues> createState() {
+  State<ReplaceRoutesValues> createState() {
     return ValuesWidget();
   }
 }
 
-class ValuesWidget extends State<RoutesValues> {
+class ValuesWidget extends State<ReplaceRoutesValues> {
 
   @override
   void initState() {
@@ -37,9 +37,10 @@ class ValuesWidget extends State<RoutesValues> {
       body: Center(
         child: OutlinedButton(
           onPressed: () {
-            // 下面 是返回上级路由
-            //     当然，在没有特别处理的情况下Flutter自动地为我们在新的界面的左上角添加了返回上级界面的返回按钮，并实现了返回路由功能；
-            Navigator.of(context).pop();
+            // 下面是 跳转到指定界面；从 ItemHomePage 跳转到 本界面；然后通过下面的方式，
+            //      跳转到 “search”路由对应的 RoutesSearchPageByName 界面；
+            Navigator.of(context).pushReplacementNamed('/search');// 也叫 路由替换
+            // 当然，若非是特殊要求，界面的跳转，我们还是应该按照 正常的跳转路由来实现；
           },
           child: Text(
             "上级界面传过来是是啥：\n${titleValue}，\n${aid}",
