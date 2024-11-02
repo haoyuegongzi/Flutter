@@ -14,7 +14,7 @@ main() {
   ));
 }
 
-// Row / Column组件 + Expanded组件 + flex属性 来实现权重布局
+// Row / Column组件 + Expanded 组件 + flex属性 来实现权重布局
 class ExpandedView extends StatelessWidget {
   const ExpandedView({super.key});
 

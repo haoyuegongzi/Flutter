@@ -14,6 +14,7 @@ void main() {
 class PageViewBanner extends StatefulWidget {
   const PageViewBanner({super.key});
 
+  // TODO:lifecycle: StatefulWidget 创建时被调用，用于创建与该 widget 关联的 State 对象。
   @override
   State<PageViewBanner> createState() {
     return PageViewBannerImpl();
@@ -21,13 +22,14 @@ class PageViewBanner extends StatefulWidget {
 }
 
 class PageViewBannerImpl extends State<PageViewBanner> {
-
+  var listData = [1, 2, 3, 4, 5];
   List<Widget> list = [];
+  List<Widget> newList = [];
   int itemCount = 10000;
 
   @override
   void initState() {
-    // TODO: implement initState
+    // TODO:lifecycle: 生命周期中只会被调用一次，在 State 对象被插入到渲染树中时调用。进行一次性的初始化工作。
     super.initState();
     list = [
       BannerListWidget(
@@ -52,7 +54,14 @@ class PageViewBannerImpl extends State<PageViewBanner> {
   }
 
   @override
+  void didChangeDependencies() {
+    // TODO:lifecycle:在 initState 之后立即调用，并且每当 State 对象的依赖项发生变化时也会调用。可以用于处理依赖项变化的逻辑。
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    // TODO:lifecycle: 构建 widget 树的方法，每次需要更新界面时都会调用。
    return Scaffold(
      appBar: AppBar(
        title: const Text(
@@ -78,6 +87,30 @@ class PageViewBannerImpl extends State<PageViewBanner> {
        ),
      ),
    );
+  }
+
+  @override
+  void didUpdateWidget(covariant PageViewBanner oldWidget) {
+    // TODO:lifecycle: 在 widget 重新构建时调用，这里的 oldWidget 是之前的 widget。适用于需要比较新旧 widget 数据的场景。
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void setState(VoidCallback fn) {
+    // TODO:lifecycle: 通知 Flutter 框架该状态已经改变，并请求重建 widget 树。
+    super.setState(fn);
+  }
+
+  @override
+  void deactivate() {
+    // TODO:lifecycle: 当 State 对象从树中移除时调用，但还没有被销毁。适用于需要做一些清理工作，但还不完全销毁的场景。
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    // TODO:lifecycle: 在 State 对象永久移除时调用，用于释放资源。例如取消计时器、流的订阅等。
+    super.dispose();
   }
 }
 
