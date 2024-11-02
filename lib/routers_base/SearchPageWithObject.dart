@@ -9,10 +9,16 @@ class SearchPageWithObject extends StatefulWidget {
   SearchPageWithObject({super.key, this.mTitle = ""});
 
   @override
-  State<StatefulWidget> createState() => SearchFunction();
+  State<StatefulWidget> createState() => SearchFunction("搞什么破玩意儿");
 }
 
 class SearchFunction extends State<SearchPageWithObject> {
+
+  String title = "";
+
+  SearchFunction(this.title) {
+
+  }
 
   @override
   void initState() {
