@@ -7,6 +7,8 @@ main() {
 class SliverLayout extends StatelessWidget {
   final String str = "qwertyuiopplkjhgfdsazxcvbnmqwertyuiopplkjhgfdsazxcvbnm";
 
+  const SliverLayout({super.key});
+
   @override
   Widget build(BuildContext context) {
     List<Text> childrenText = createWidgetList(str);

@@ -37,7 +37,7 @@ class TimerImplWidget extends State<StatefulWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-          Text("已经点击的次数：$count"),
+            Text("已经点击的次数：$count"),
           ],
         ),
       ),
