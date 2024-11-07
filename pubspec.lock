@@ -169,6 +169,7 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.8"
+<<<<<<< HEAD
   dart_style:
     dependency: transitive
     description:
@@ -193,6 +194,8 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.0.1"
+=======
+>>>>>>> 43d350506c822199e56500ca3d0cd38b927fd739
   fake_async:
     dependency: transitive
     description:
@@ -256,6 +259,7 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "8.2.5"
+<<<<<<< HEAD
   frontend_server_client:
     dependency: transitive
     description:
@@ -336,6 +340,8 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "6.8.0"
+=======
+>>>>>>> 43d350506c822199e56500ca3d0cd38b927fd739
   lints:
     dependency: transitive
     description:
@@ -344,6 +350,7 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "4.0.0"
+<<<<<<< HEAD
   logging:
     dependency: transitive
     description:
@@ -352,6 +359,8 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "1.2.0"
+=======
+>>>>>>> 43d350506c822199e56500ca3d0cd38b927fd739
   matcher:
     dependency: transitive
     description:
@@ -679,4 +688,8 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.2.3 <4.0.0"
+<<<<<<< HEAD
   flutter: ">=3.16.0"
+=======
+  flutter: ">=1.10.0"
+>>>>>>> 43d350506c822199e56500ca3d0cd38b927fd739
