@@ -13,7 +13,6 @@ class RoutesRegisterValues extends StatefulWidget {
 }
 
 class ValuesWidget extends State<RoutesRegisterValues> {
-
   @override
   void initState() {
     super.initState();
@@ -42,37 +41,16 @@ class ValuesWidget extends State<RoutesRegisterValues> {
             // 然后从 registerSecond 跳转到 registerThird 页面。这个时候我们想的是 registerThird 注册成功后返回到
             // RootRoutrsHomePage。 这个时候就用到了返回到根路由的方法：
             Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (BuildContext context) {
-                          return const RootRoutrsHomePage();
-                      }
-                    ),
-            (route) => false
-            );
+                MaterialPageRoute(builder: (BuildContext context) {
+              return const RootRoutrsHomePage();
+            }), (route) => false);
           },
           child: Text(
             "上级界面传过来是是啥：\n${titleValue}，\n${aid}",
-            style: const TextStyle(
-                fontSize: 16,
-                color: Colors.pink
-            ),
+            style: const TextStyle(fontSize: 16, color: Colors.pink),
           ),
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

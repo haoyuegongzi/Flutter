@@ -32,18 +32,20 @@ class FutureBuilderFullWidgetImpl extends State<FutureBuilderFullWidget> {
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
         title: const Text(
-            "FutureBuilder模式下的状态管理",
-          style: TextStyle(
-            color: Colors.white
-          ),
+          "FutureBuilder模式下的状态管理",
+          style: TextStyle(color: Colors.white),
         ),
       ),
       body: FutureBuilder<dynamic>(
         future: getData(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-          if(snapshot.connectionState == ConnectionState.waiting) {// 数据请求中
-            return const Center(child: CircularProgressIndicator(),);
-          } else if (snapshot.hasError) {// 出现Error
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            // 数据请求中
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (snapshot.hasError) {
+            // 出现Error
             return Text("Error: ${snapshot.error}");
           } else {
             return Text("请求到的数据是: \n${snapshot.data}");
@@ -55,8 +57,9 @@ class FutureBuilderFullWidgetImpl extends State<FutureBuilderFullWidget> {
 
   dynamic getData() async {
     var httpDio = Dio();
-    var response = await httpDio.get("https://wanandroid.com/harmony/index/json");
-    if(response.statusCode == 200) {
+    var response =
+        await httpDio.get("https://wanandroid.com/harmony/index/json");
+    if (response.statusCode == 200) {
       HarmonyBean harmonyBean = HarmonyBean.fromJson(response.data);
       return harmonyBean.data?.tools;
     } else {
@@ -64,16 +67,3 @@ class FutureBuilderFullWidgetImpl extends State<FutureBuilderFullWidget> {
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

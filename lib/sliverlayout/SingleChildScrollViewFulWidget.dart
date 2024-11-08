@@ -26,7 +26,6 @@ class SliverLayout extends StatefulWidget {
 }
 
 class SliverLayoutListener extends State<SliverLayout> {
-
   final String str = "qwertyuiopplkjhgfdsazxcvbnmqwertyuiopplkjhgfdsazxcvbnm";
   final ScrollController scrollController = ScrollController();
   bool showToTopBtn = false;
@@ -35,13 +34,14 @@ class SliverLayoutListener extends State<SliverLayout> {
   void initState() {
     super.initState();
     scrollController.addListener(() {
-      debugPrint("获取到的滑动偏移量, offset: ${scrollController.offset}, initialScrollOffset: ${scrollController.initialScrollOffset}");
+      debugPrint(
+          "获取到的滑动偏移量, offset: ${scrollController.offset}, initialScrollOffset: ${scrollController.initialScrollOffset}");
       // 滑动偏移量小于100，则隐藏向上的 FloatingActionButton 按钮
       if (scrollController.offset < 100) {
         setState(() {
           showToTopBtn = false;
         });
-      } else if (scrollController.offset >= 100){
+      } else if (scrollController.offset >= 100) {
         setState(() {
           showToTopBtn = true;
         });
@@ -102,15 +102,15 @@ class SliverLayoutListener extends State<SliverLayout> {
           ),
         ),
         // showToTopBtn 为false，表示隐藏 FloatingActionButton 按钮，因此这里 返回一个 null 对象
-        floatingActionButton: !showToTopBtn ? null : FloatingActionButton(
-            child: const Icon(Icons.arrow_upward),
-            onPressed: () {
-              scrollController.jumpTo(0);//  列表滚动到指定的position
-              // scrollController.animateTo();//  列表滚动到指定的position（但要添加动画亦即动画执行时间）
-            }
-        ),
+        floatingActionButton: !showToTopBtn
+            ? null
+            : FloatingActionButton(
+                child: const Icon(Icons.arrow_upward),
+                onPressed: () {
+                  scrollController.jumpTo(0); //  列表滚动到指定的position
+                  // scrollController.animateTo();//  列表滚动到指定的position（但要添加动画亦即动画执行时间）
+                }),
       ),
     );
   }
-
 }

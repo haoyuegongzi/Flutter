@@ -3,15 +3,13 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
-      appBar: AppBar(
-          title: const Text("Flutter demo03")
-      ),
-      body:const HomeWidget(),
+      appBar: AppBar(title: const Text("Flutter demo03")),
+      body: const HomeWidget(),
     ),
   ));
 }
 
-class HomeWidget extends StatelessWidget{
+class HomeWidget extends StatelessWidget {
   const HomeWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {

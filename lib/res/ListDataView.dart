@@ -6,49 +6,44 @@ import 'package:flutter/material.dart';
 
 List<Map<String, String>> listDataMap = [
   {
-    "title":"Candy shop",
-    "ahthor":"Mohamed Chain",
-    "imageUrl":"https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"
+    "title": "Candy shop",
+    "ahthor": "Mohamed Chain",
+    "imageUrl":
+        "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"
   },
   {
-    "title":"Wladislawa",
-    "ahthor":"Summer",
-    "imageUrl":"https://www.pexels.com/zh-cn/photo/17126633/"
+    "title": "Wladislawa",
+    "ahthor": "Summer",
+    "imageUrl": "https://www.pexels.com/zh-cn/photo/17126633/"
   },
   {
-    "title":"女士、远足、湖图片",
-    "ahthor":"Mohamed Chain",
-    "imageUrl":"https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"
+    "title": "女士、远足、湖图片",
+    "ahthor": "Mohamed Chain",
+    "imageUrl":
+        "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"
   },
   {
-    "title":"Ellwangen",
-    "ahthor":"jameswheeler",
-    "imageUrl":"https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"
+    "title": "Ellwangen",
+    "ahthor": "jameswheeler",
+    "imageUrl":
+        "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"
   },
   {
-    "title":"哥特、幻想、黑暗",
-    "ahthor":"darksouls1",
-    "imageUrl":"https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"
+    "title": "哥特、幻想、黑暗",
+    "ahthor": "darksouls1",
+    "imageUrl":
+        "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"
   },
 ];
 
 List<Widget> createWidgetList() {
   List<Widget> temp = [];
-  for(var i = 0; i < listDataMap.length; i++) {
+  for (var i = 0; i < listDataMap.length; i++) {
     temp.add(ListTile(
-      leading: Image.network(
-          "${listDataMap[i]["imageUrl"]}"
-      ),
-      title: Text(
-          "${listDataMap[i]["title"]}"
-      ),
-      subtitle: Text(
-          "${listDataMap[i]["ahthor"]}"
-      ),
-    )
-    );
+      leading: Image.network("${listDataMap[i]["imageUrl"]}"),
+      title: Text("${listDataMap[i]["title"]}"),
+      subtitle: Text("${listDataMap[i]["ahthor"]}"),
+    ));
   }
   return temp;
 }
-
-

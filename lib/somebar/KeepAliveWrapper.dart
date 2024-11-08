@@ -3,7 +3,8 @@ import 'package:flutter/cupertino.dart';
 class KeepAliveWrapper extends StatefulWidget {
   final Widget child;
   final bool keepAlive;
-  const KeepAliveWrapper({super.key, required this.child, this.keepAlive = false});
+  const KeepAliveWrapper(
+      {super.key, required this.child, this.keepAlive = false});
 
   @override
   State<KeepAliveWrapper> createState() => KeepAliveWrapperState();

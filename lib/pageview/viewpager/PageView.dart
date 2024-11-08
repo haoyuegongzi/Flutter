@@ -39,7 +39,7 @@ class FlutterPageView extends State<FlutterViewPager> {
       ),
       // body: const ViewPagerDemo(),
       body: PageView(
-        scrollDirection: Axis.vertical,// 默认是水平方向
+        scrollDirection: Axis.vertical, // 默认是水平方向
         allowImplicitScrolling: true,
         children: [
           Center(
@@ -83,6 +83,3 @@ class FlutterPageView extends State<FlutterViewPager> {
     );
   }
 }
-
-
-

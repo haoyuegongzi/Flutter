@@ -7,7 +7,7 @@ main() {
     home: Scaffold(
       appBar: AppBar(
         title: const Text(
-            "Stack 组件里面 嵌套 Align 组件",
+          "Stack 组件里面 嵌套 Align 组件",
         ),
       ),
       body: const StackAlignView(),
@@ -15,11 +15,8 @@ main() {
   ));
 }
 
-
 class StackAlignView extends StatelessWidget {
-  const StackAlignView
-
-  ({super.key});
+  const StackAlignView({super.key});
 
   @override
   Widget build(BuildContext context) {

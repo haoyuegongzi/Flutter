@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "OutlinedButton边框按钮是什么鬼",
-            style: TextStyle(
-                fontSize: 24,
-                color: Colors.deepPurple,
-                fontStyle: FontStyle.italic,
-                fontFamily: "fontFamily啥作用的属性？"),
-          ),
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "OutlinedButton边框按钮是什么鬼",
+          style: TextStyle(
+              fontSize: 24,
+              color: Colors.deepPurple,
+              fontStyle: FontStyle.italic,
+              fontFamily: "fontFamily啥作用的属性？"),
         ),
-        body: const WrapWidget(),
       ),
-    )
-  );
+      body: const WrapWidget(),
+    ),
+  ));
 }
 
 class WrapWidget extends StatelessWidget {
@@ -25,7 +23,7 @@ class WrapWidget extends StatelessWidget {
 
   List<Button2> createListWidget() {
     List<Button2> listWidget = [];
-    for(var i = 0; i < 20; i++) {
+    for (var i = 0; i < 20; i++) {
       var str = "第 ${i + 1} 集";
       listWidget.add(Button2(str, onPressed: () {}));
     }
@@ -67,8 +65,8 @@ class Button2 extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          backgroundColor:
-          MaterialStateProperty.all(const Color.fromARGB(255, 236, 233, 233)),
+          backgroundColor: MaterialStateProperty.all(
+              const Color.fromARGB(255, 236, 233, 233)),
           foregroundColor: MaterialStateProperty.all(Colors.black45),
         ),
         child: Text(text),
@@ -76,10 +74,3 @@ class Button2 extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-

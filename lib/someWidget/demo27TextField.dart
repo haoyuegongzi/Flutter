@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 main() {
@@ -73,8 +72,7 @@ class EditTextFullState extends State<EditTextFulWidget> {
               decoration: const InputDecoration(
                   labelText: "用户名",
                   hintText: "请输入用户名或者邮箱或者手机号",
-                  prefixIcon: Icon(Icons.person)
-              ),
+                  prefixIcon: Icon(Icons.person)),
               onChanged: (s) {
                 debugPrint("TextField，onChanged 用户名输入信息变化：$s");
               },
@@ -86,7 +84,8 @@ class EditTextFullState extends State<EditTextFulWidget> {
                 debugPrint("TextField，onSubmitted 用户名输入 提交：${s}");
               },
               onTapOutside: (e) {
-                debugPrint("TextField，onTapOutside 用户名输入 点击输入框外面的监听：${e.toString()}");
+                debugPrint(
+                    "TextField，onTapOutside 用户名输入 点击输入框外面的监听：${e.toString()}");
               },
             ),
             TextField(
@@ -96,8 +95,7 @@ class EditTextFullState extends State<EditTextFulWidget> {
               decoration: const InputDecoration(
                   labelText: "登录密码",
                   hintText: "请输入登录密码",
-                  prefixIcon: Icon(Icons.lock)
-              ),
+                  prefixIcon: Icon(Icons.lock)),
               onChanged: (s) {
                 debugPrint("TextField，onChanged 密码输入信息变化：$s");
               },
@@ -109,7 +107,8 @@ class EditTextFullState extends State<EditTextFulWidget> {
                 debugPrint("TextField，onSubmitted 密码输入 提交：${s}");
               },
               onTapOutside: (e) {
-                debugPrint("TextField，onTapOutside 密码输入 点击输入框外面的监听：${e.toString()}");
+                debugPrint(
+                    "TextField，onTapOutside 密码输入 点击输入框外面的监听：${e.toString()}");
               },
             )
           ],
@@ -178,27 +177,3 @@ class EditTextFullState extends State<EditTextFulWidget> {
   //   );
   // }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

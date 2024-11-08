@@ -12,7 +12,6 @@ class RoutesValues extends StatefulWidget {
 }
 
 class ValuesWidget extends State<RoutesValues> {
-
   @override
   void initState() {
     super.initState();
@@ -43,28 +42,10 @@ class ValuesWidget extends State<RoutesValues> {
           },
           child: Text(
             "上级界面传过来是是啥：\n${titleValue}，\n${aid}",
-            style: const TextStyle(
-                fontSize: 16,
-                color: Colors.pink
-            ),
+            style: const TextStyle(fontSize: 16, color: Colors.pink),
           ),
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

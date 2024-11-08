@@ -16,44 +16,22 @@ class RoutersName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "基本的命名路由",
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.orange),
-      color: Colors.lightBlueAccent,
-      initialRoute: "/",
-      routes: {
-        "/home":(context)=>const ItemHomePage(),
-        "/bill":(context)=>const ItemBillOerder(),
-        "/emergency":(context)=>const ItemEmergency(),
-        "/category":(context)=>const Category(),
-        "/search":(context)=>const SearchPageByName(),
-        // 上面三行的写法 跟 下面的写法是一样的作用
-        "/mine":(context) {
-          return const ItemMinePage();
-        }
-      },
-      home: const ItemHomePage()
-    );
+        title: "基本的命名路由",
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.orange),
+        color: Colors.lightBlueAccent,
+        initialRoute: "/",
+        routes: {
+          "/home": (context) => const ItemHomePage(),
+          "/bill": (context) => const ItemBillOerder(),
+          "/emergency": (context) => const ItemEmergency(),
+          "/category": (context) => const Category(),
+          "/search": (context) => const SearchPageByName(),
+          // 上面三行的写法 跟 下面的写法是一样的作用
+          "/mine": (context) {
+            return const ItemMinePage();
+          }
+        },
+        home: const ItemHomePage());
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

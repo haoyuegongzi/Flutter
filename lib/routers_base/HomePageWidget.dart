@@ -48,22 +48,20 @@ class HomePageFunction extends State<HomePageWidget> {
         const Divider(),
         TextButton(
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) =>
-                  const SearchPageWithValue(mTitle : "从HomePage的TextButton跳过来")
-            ));
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => const SearchPageWithValue(
+                    mTitle: "从HomePage的TextButton跳过来")));
           },
           child: const Text("跳转去 SearchPageWithValue 界面"),
-          
         ),
         const Divider(),
         OutlinedButton(
           onPressed: () {
             mSearchPageObj.mTitle = "动态传值过来的";
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (BuildContext context) {
-                return mSearchPageObj;
-              })
-            );
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (BuildContext context) {
+              return mSearchPageObj;
+            }));
           },
           child: const Text("通过对象，去 SearchPageWithObject界面"),
         )

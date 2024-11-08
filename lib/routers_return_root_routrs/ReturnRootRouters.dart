@@ -17,15 +17,16 @@ void main() {
 }
 
 class RoutersName extends StatelessWidget {
-  final Map<String,Function> routesMap = {
-    "/home": (context, {arguments})=>const RootRoutrsHomePage(),
-    "/bill": (context, {arguments})=>const RootRoutrsBillOrder(),
-    "/emergency": (context, {arguments})=>const RootRoutrsEmergency(),
-    "/mine": (context, {arguments})=>const RootRoutrsMine(),
-    "/first": (context, {arguments})=>const RoutesRegisterFirst(),
-    "/second": (context, {arguments})=>const RoutesRegisterSecond(),
-    "/third": (context, {arguments})=>const RoutesRegisterThird(),
-    "/register": (context, {arguments})=>RoutesRegisterValues(valuesRoute:arguments)
+  final Map<String, Function> routesMap = {
+    "/home": (context, {arguments}) => const RootRoutrsHomePage(),
+    "/bill": (context, {arguments}) => const RootRoutrsBillOrder(),
+    "/emergency": (context, {arguments}) => const RootRoutrsEmergency(),
+    "/mine": (context, {arguments}) => const RootRoutrsMine(),
+    "/first": (context, {arguments}) => const RoutesRegisterFirst(),
+    "/second": (context, {arguments}) => const RoutesRegisterSecond(),
+    "/third": (context, {arguments}) => const RoutesRegisterThird(),
+    "/register": (context, {arguments}) =>
+        RoutesRegisterValues(valuesRoute: arguments)
     // 注意，注意，注意：context 后面的参数，必须是/只能是/唯一的 “arguments”；
     //                RoutesRegisterValues 的构造方法里面的 入参，必须跟 RoutesValues 的class类里面定义的一致；
     // 否则，会有意想不到的错误；这个算是固定写法；
@@ -36,54 +37,33 @@ class RoutersName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "基本的命名路由",
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.orange),
-      color: Colors.lightBlueAccent,
-      initialRoute: "/",
-      onGenerateRoute: (RouteSettings settings){
-        final String? name = settings.name;
-        final Function? pageContentBuilder = routesMap[name];
+        title: "基本的命名路由",
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.orange),
+        color: Colors.lightBlueAccent,
+        initialRoute: "/",
+        onGenerateRoute: (RouteSettings settings) {
+          final String? name = settings.name;
+          final Function? pageContentBuilder = routesMap[name];
 
-        if (pageContentBuilder != null) {
-          if (settings.arguments != null) {
-            final Route route = MaterialPageRoute(
-                builder: (context) =>
-                    pageContentBuilder(context, arguments: settings.arguments));
-            print("settings.arguments != null: ${settings.arguments}");
-            return route;
-          } else {
-            final Route route = MaterialPageRoute(
-                builder: (context) => pageContentBuilder(context));
-            print("settings.arguments == null");
-            return route;
+          if (pageContentBuilder != null) {
+            if (settings.arguments != null) {
+              final Route route = MaterialPageRoute(
+                  builder: (context) => pageContentBuilder(context,
+                      arguments: settings.arguments));
+              print("settings.arguments != null: ${settings.arguments}");
+              return route;
+            } else {
+              final Route route = MaterialPageRoute(
+                  builder: (context) => pageContentBuilder(context));
+              print("settings.arguments == null");
+              return route;
+            }
           }
-        }
-        print("RoutesSearchPageByName()");
-        return  MaterialPageRoute(builder: (context) => const RoutesRegisterFirst());
-      },
-      home: const RootRoutrsHomePage()
-    );
+          print("RoutesSearchPageByName()");
+          return MaterialPageRoute(
+              builder: (context) => const RoutesRegisterFirst());
+        },
+        home: const RootRoutrsHomePage());
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

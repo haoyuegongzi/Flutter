@@ -33,65 +33,53 @@ class HomePageFunction extends State<ItemHomePage> {
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (BuildContext context) {
-                  return const Category();
-                }));
-              },
-              child: const Text(
-                  "通过基本路由跳转去Category页面",
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.teal,
-                      fontStyle: FontStyle.normal)
-              ),
-            ),
-            const Divider(),
-            TextButton(
-              onPressed: () {
-                print("命名路由 跳转去search页面");
-                Navigator.of(context).pushNamed("/search");
-              },
-              child: const Text(
-                  "通过命名路由 跳转去search页面",
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.teal,
-                      fontStyle: FontStyle.normal)
-              ),
-            ),
-            const Divider(),
-            OutlinedButton(
-              onPressed: () {
-                Map argumentsMap = {
-                  "title": "去 RoutesValues 路由页面",
-                  "aid": 41
-                };
-                print(argumentsMap);
-                // 下面两种方式都是可以成功跳转的。
-                Navigator.of(context).pushNamed("/RoutesValues",
-                    arguments: argumentsMap
-                );
-                // Navigator.pushNamed(context, "/values",
-                //     arguments: argumentsMap
-                // );
-
-              },
-              child: const Text(
-                  "命名路由传值",
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.teal,
-                      fontStyle: FontStyle.normal)
-              ),
-            )
-          ],
-        )
-      ),
+          child: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) {
+                return const Category();
+              }));
+            },
+            child: const Text("通过基本路由跳转去Category页面",
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.teal,
+                    fontStyle: FontStyle.normal)),
+          ),
+          const Divider(),
+          TextButton(
+            onPressed: () {
+              print("命名路由 跳转去search页面");
+              Navigator.of(context).pushNamed("/search");
+            },
+            child: const Text("通过命名路由 跳转去search页面",
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.teal,
+                    fontStyle: FontStyle.normal)),
+          ),
+          const Divider(),
+          OutlinedButton(
+            onPressed: () {
+              Map argumentsMap = {"title": "去 RoutesValues 路由页面", "aid": 41};
+              print(argumentsMap);
+              // 下面两种方式都是可以成功跳转的。
+              Navigator.of(context)
+                  .pushNamed("/RoutesValues", arguments: argumentsMap);
+              // Navigator.pushNamed(context, "/values",
+              //     arguments: argumentsMap
+              // );
+            },
+            child: const Text("命名路由传值",
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.teal,
+                    fontStyle: FontStyle.normal)),
+          )
+        ],
+      )),
     );
   }
 }

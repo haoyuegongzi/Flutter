@@ -1,5 +1,3 @@
-
-
 class HarmonyBean {
   Data? data;
   int? errorCode;
@@ -14,7 +12,7 @@ class HarmonyBean {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  {};
+    final Map<String, dynamic> data = {};
     if (this.data != null) {
       data['data'] = this.data!.toJson();
     }
@@ -37,15 +35,15 @@ class Data {
   Data({this.links, this.openSources, this.tools});
 
   Data.fromJson(Map<String, dynamic> json) {
-    links = json['links'] != null ?  Links.fromJson(json['links']) : null;
+    links = json['links'] != null ? Links.fromJson(json['links']) : null;
     openSources = json['open_sources'] != null
-        ?  Links.fromJson(json['open_sources'])
+        ? Links.fromJson(json['open_sources'])
         : null;
-    tools = json['tools'] != null ?  Links.fromJson(json['tools']) : null;
+    tools = json['tools'] != null ? Links.fromJson(json['tools']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  <String, dynamic>{};
+    final Map<String, dynamic> data = <String, dynamic>{};
     if (links != null) {
       data['links'] = links!.toJson();
     }
@@ -83,26 +81,26 @@ class Links {
 
   Links(
       {this.articleList,
-        this.author,
-        this.children,
-        this.courseId,
-        this.cover,
-        this.desc,
-        this.id,
-        this.lisense,
-        this.lisenseLink,
-        this.name,
-        this.order,
-        this.parentChapterId,
-        this.type,
-        this.userControlSetTop,
-        this.visible});
+      this.author,
+      this.children,
+      this.courseId,
+      this.cover,
+      this.desc,
+      this.id,
+      this.lisense,
+      this.lisenseLink,
+      this.name,
+      this.order,
+      this.parentChapterId,
+      this.type,
+      this.userControlSetTop,
+      this.visible});
 
   Links.fromJson(Map<String, dynamic> json) {
     if (json['articleList'] != null) {
       articleList = <ArticleList>[];
       json['articleList'].forEach((v) {
-        articleList!.add( ArticleList.fromJson(v));
+        articleList!.add(ArticleList.fromJson(v));
       });
     }
     author = json['author'];
@@ -200,40 +198,40 @@ class ArticleList {
 
   ArticleList(
       {this.adminAdd,
-        this.apkLink,
-        this.audit,
-        this.author,
-        this.canEdit,
-        this.chapterId,
-        this.chapterName,
-        this.collect,
-        this.courseId,
-        this.desc,
-        this.descMd,
-        this.envelopePic,
-        this.fresh,
-        this.host,
-        this.id,
-        this.isAdminAdd,
-        this.link,
-        this.niceDate,
-        this.niceShareDate,
-        this.origin,
-        this.prefix,
-        this.projectLink,
-        this.publishTime,
-        this.realSuperChapterId,
-        this.selfVisible,
-        this.shareDate,
-        this.shareUser,
-        this.superChapterId,
-        this.superChapterName,
-        this.tags,
-        this.title,
-        this.type,
-        this.userId,
-        this.visible,
-        this.zan});
+      this.apkLink,
+      this.audit,
+      this.author,
+      this.canEdit,
+      this.chapterId,
+      this.chapterName,
+      this.collect,
+      this.courseId,
+      this.desc,
+      this.descMd,
+      this.envelopePic,
+      this.fresh,
+      this.host,
+      this.id,
+      this.isAdminAdd,
+      this.link,
+      this.niceDate,
+      this.niceShareDate,
+      this.origin,
+      this.prefix,
+      this.projectLink,
+      this.publishTime,
+      this.realSuperChapterId,
+      this.selfVisible,
+      this.shareDate,
+      this.shareUser,
+      this.superChapterId,
+      this.superChapterName,
+      this.tags,
+      this.title,
+      this.type,
+      this.userId,
+      this.visible,
+      this.zan});
 
   ArticleList.fromJson(Map<String, dynamic> json) {
     adminAdd = json['adminAdd'];
@@ -279,7 +277,7 @@ class ArticleList {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data =  {};
+    final Map<String, dynamic> data = {};
     data['adminAdd'] = adminAdd;
     data['apkLink'] = apkLink;
     data['audit'] = audit;

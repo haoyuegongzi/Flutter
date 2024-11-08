@@ -41,7 +41,8 @@ class StackPositionedWidget extends StatelessWidget {
           // Positioned 的 width宽度 和 height高度，不支持 double.infinity无限大；会报错，无法正常显示；
           // 那么，要想让 Positioned在 width宽度方向 或者 height高度方向铺满，实现方式：MediaQuery
           // 另外，Positioned里面的子组件对宽度或者高度有具体要求，那么最好是直接给 Positioned 设置宽度或者高度，不通过他的子组件去设置；否则比较容易出问题。
-          Positioned( // 起到相对于 父组件View 的定位。
+          Positioned(
+              // 起到相对于 父组件View 的定位。
               // Positioned 组件内部有7个参数，分别是：上、下、左、右；宽、高；以及 child。
               // 通过下面的 left + top 两个属性，让 Container 组件及其子组件 Text
               // 位于父布局Stack的左上角，距离左边距和顶部编剧均为20。

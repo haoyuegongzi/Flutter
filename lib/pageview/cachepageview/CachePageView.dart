@@ -53,7 +53,10 @@ class PageViewBannerImpl extends State<CachePageView> {
       // keepAlive = false时，跟下面的 BannerListWidget（没有采用缓存机制）的逻辑是一样的。
       var banner = KeepAliveWrapper(
         keepAlive: true,
-        child: Image.network(srcList[i], fit: BoxFit.cover,),
+        child: Image.network(
+          srcList[i],
+          fit: BoxFit.cover,
+        ),
       );
       // 无论什么情况下，都会一直执行 BannerListWidget 和 BannerStack 的 build(BuildContext context) 方法；
       // 而且，当banner轮播图从最后一张切换到第一张时，会多次多次执行 BannerListWidget 和 BannerStack 的 build(BuildContext context) 方法；

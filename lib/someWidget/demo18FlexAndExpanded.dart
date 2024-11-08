@@ -105,9 +105,7 @@ class FlexWidget extends StatelessWidget {
                   Icons.cabin,
                   color: Colors.red,
                   size: sizeView,
-                )
-            )
-        ),
+                ))),
         Expanded(
           flex: 2,
           child: Container(
@@ -118,8 +116,7 @@ class FlexWidget extends StatelessWidget {
                 Icons.add_a_photo,
                 color: Colors.green,
                 size: sizeView,
-              )
-          ),
+              )),
         ),
         Expanded(
             flex: 3,
@@ -127,13 +124,8 @@ class FlexWidget extends StatelessWidget {
                 // width: double.infinity,
                 height: double.infinity,
                 color: Colors.lightGreen,
-                child: const Icon(
-                    Icons.ac_unit,
-                    color: Colors.deepPurple,
-                    size: sizeView
-                )
-            )
-        )
+                child: const Icon(Icons.ac_unit,
+                    color: Colors.deepPurple, size: sizeView)))
       ],
     );
   }
@@ -142,7 +134,8 @@ class FlexWidget extends StatelessWidget {
 // 某一个方向（horizontal 水平方向；vertical 垂直方向）后面的View组件 固定宽度，剩下的全部留给前面的布局
 // 实现方式：后面 固定宽度的View组件，宽度直接写成一个固定的值，然后剩下的前面的宽度，按照 预期的比例，分配给剩余的布局；
 // 比如，下面布局中，最后面的 Container组件宽度为520，然后剩下的宽度按照 1 : 2的比例，分配给两个 Expanded组件。
-class PartDifferentLayout extends StatelessWidget {// 水平方向，右边的右边的布局固定，左边的自适应
+class PartDifferentLayout extends StatelessWidget {
+  // 水平方向，右边的右边的布局固定，左边的自适应
   const PartDifferentLayout({super.key});
 
   @override
@@ -157,44 +150,38 @@ class PartDifferentLayout extends StatelessWidget {// 水平方向，右边的�
       direction: Axis.horizontal,
       children: <Widget>[
         Expanded(
-          // flex 属性就相当于 Android 线性布局里面的 weight权重布局 属性，有了这个属性之后，对应的 宽度/高度 就不生效了。
-          // 因此，在这里，Row 组件里面的 组件，就不再设置 width参数了；设置了也没效果；
-          // 如果将 Row组件 换成 Column组件，那么，就不再设置 height参数了；设置了也没效果；
+            // flex 属性就相当于 Android 线性布局里面的 weight权重布局 属性，有了这个属性之后，对应的 宽度/高度 就不生效了。
+            // 因此，在这里，Row 组件里面的 组件，就不再设置 width参数了；设置了也没效果；
+            // 如果将 Row组件 换成 Column组件，那么，就不再设置 height参数了；设置了也没效果；
             flex: 1,
             child: Container(
-              // width: double.infinity,
+                // width: double.infinity,
                 height: double.infinity,
                 color: Colors.brown,
                 child: const Icon(
                   Icons.cabin,
                   color: Colors.red,
                   size: sizeView,
-                )
-            )
-        ),
+                ))),
         Expanded(
           flex: 2,
           child: Container(
-            // width: double.infinity,
+              // width: double.infinity,
               height: double.infinity,
               color: Colors.lime,
               child: const Icon(
                 Icons.add_a_photo,
                 color: Colors.green,
                 size: sizeView,
-              )
-          ),
+              )),
         ),
         Container(
           // width: 520,
           width: 120,
           height: double.infinity,
           color: Colors.lightBlueAccent,
-          child: const Icon(
-              Icons.ac_unit,
-              color: Colors.deepPurple,
-              size: sizeView
-          ),
+          child: const Icon(Icons.ac_unit,
+              color: Colors.deepPurple, size: sizeView),
         )
       ],
     );
@@ -210,96 +197,91 @@ class ComplexLayout extends StatelessWidget {
     const double sizeView = 60;
 
     return Container(
-      color: Colors.black12,
-      // padding: const EdgeInsetsDirectional.all(12),
-      margin: const EdgeInsetsDirectional.all(12),
-      child: Flex(
-        direction: Axis.vertical,
-        children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              color: Colors.lightBlueAccent,
-              margin: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 6),
-              child: const Icon(
-              Icons.ac_unit,
-              color: Colors.deepPurple,
-              size: sizeView,
-              ),
-            )
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              width: double.infinity,
-              height: double.infinity,
-              margin: const EdgeInsetsDirectional.fromSTEB(0, 6, 0, 0),
-              child: Flex(
-                direction: Axis.horizontal,
-                children: [
-                  Expanded(
-                      flex: 2,
-                      child: Container(
-                        width: double.infinity,
-                        height: double.infinity,
-                        color: Colors.deepPurple,
-                        margin: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
-                        child: const Icon(
-                          Icons.add_a_photo,
-                          color: Colors.green,
-                          size: sizeView,
-                        ),
-                      )
+        color: Colors.black12,
+        // padding: const EdgeInsetsDirectional.all(12),
+        margin: const EdgeInsetsDirectional.all(12),
+        child: Flex(
+          direction: Axis.vertical,
+          children: [
+            Expanded(
+                flex: 1,
+                child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  color: Colors.lightBlueAccent,
+                  margin: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 6),
+                  child: const Icon(
+                    Icons.ac_unit,
+                    color: Colors.deepPurple,
+                    size: sizeView,
                   ),
-                  Expanded(
-                      flex: 1,
-                      child: Container(
-                        width: double.infinity,
-                        height: double.infinity,
-                        margin: const EdgeInsetsDirectional.fromSTEB(6, 0, 0, 0),
-                        child: Flex(
-                          direction: Axis.vertical,
-                          children: [
-                            Expanded(
-                                flex: 1,
-                                child: Container(
-                                    width: double.infinity,
-                                    height: double.infinity,
-                                    color: Colors.orange,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 6),
-                                    child: const Icon(
-                                      Icons.account_circle,
-                                      color: Colors.black38,
-                                      size: sizeView,
-                                    )
-                                )
+                )),
+            Expanded(
+                flex: 1,
+                child: Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  margin: const EdgeInsetsDirectional.fromSTEB(0, 6, 0, 0),
+                  child: Flex(
+                    direction: Axis.horizontal,
+                    children: [
+                      Expanded(
+                          flex: 2,
+                          child: Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            color: Colors.deepPurple,
+                            margin: const EdgeInsetsDirectional.fromSTEB(
+                                0, 0, 6, 0),
+                            child: const Icon(
+                              Icons.add_a_photo,
+                              color: Colors.green,
+                              size: sizeView,
                             ),
-                            Expanded(
-                                flex: 1,
-                                child: Container(
-                                    width: double.infinity,
-                                    height: double.infinity,
-                                    color: Colors.teal,
-                                    margin: const EdgeInsetsDirectional.fromSTEB(0, 6, 0, 0),
-                                    child: const Icon(
-                                      Icons.account_balance,
-                                      color: Colors.lime,
-                                      size: sizeView,
-                                    )
-                                )
+                          )),
+                      Expanded(
+                          flex: 1,
+                          child: Container(
+                            width: double.infinity,
+                            height: double.infinity,
+                            margin: const EdgeInsetsDirectional.fromSTEB(
+                                6, 0, 0, 0),
+                            child: Flex(
+                              direction: Axis.vertical,
+                              children: [
+                                Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                        color: Colors.orange,
+                                        margin: const EdgeInsetsDirectional
+                                            .fromSTEB(0, 0, 0, 6),
+                                        child: const Icon(
+                                          Icons.account_circle,
+                                          color: Colors.black38,
+                                          size: sizeView,
+                                        ))),
+                                Expanded(
+                                    flex: 1,
+                                    child: Container(
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                        color: Colors.teal,
+                                        margin: const EdgeInsetsDirectional
+                                            .fromSTEB(0, 6, 0, 0),
+                                        child: const Icon(
+                                          Icons.account_balance,
+                                          color: Colors.lime,
+                                          size: sizeView,
+                                        ))),
+                              ],
                             ),
-                          ],
-                        ),
-                      )
+                          )),
+                    ],
                   ),
-                ],
-              ),
-            )
-          )
-        ],
-      )
-    );
+                ))
+          ],
+        ));
   }
 }

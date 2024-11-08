@@ -1,26 +1,22 @@
-
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "CircleAvatar实现一个圆形图片",
-            style: TextStyle(
-                fontSize: 24,
-                color: Colors.deepPurple,
-                fontStyle: FontStyle.italic,
-                fontFamily: "fontFamily啥作用的属性？"
-            ),
-          ),
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "CircleAvatar实现一个圆形图片",
+          style: TextStyle(
+              fontSize: 24,
+              color: Colors.deepPurple,
+              fontStyle: FontStyle.italic,
+              fontFamily: "fontFamily啥作用的属性？"),
         ),
-        // body: const CircleAvatarWidget(),
-        body: CircleAvatarRing(),
       ),
-    )
-  );
+      // body: const CircleAvatarWidget(),
+      body: CircleAvatarRing(),
+    ),
+  ));
 }
 
 // CircleAvatar实现一个圆形图片, 基本上，CircleAvatar 不提供设置边框的属性。但是，可以将其包裹在具有更大半径和不同背景颜色的
@@ -38,13 +34,12 @@ class CircleAvatarWidget extends StatelessWidget {
       maxRadius: 250,
       minRadius: 150,
       foregroundImage: NetworkImage(
-          "https://img2.baidu.com/it/u=1898128106,2722598876&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800"
-      ),
+          "https://img2.baidu.com/it/u=1898128106,2722598876&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800"),
     );
   }
 }
 
-class CircleAvatarRing extends StatelessWidget{
+class CircleAvatarRing extends StatelessWidget {
   const CircleAvatarRing({super.key});
 
   @override
@@ -57,8 +52,7 @@ class CircleAvatarRing extends StatelessWidget{
         radius: 180,
         backgroundColor: Colors.cyan,
         foregroundImage: NetworkImage(
-            "https://img2.baidu.com/it/u=1898128106,2722598876&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800"
-        ),
+            "https://img2.baidu.com/it/u=1898128106,2722598876&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800"),
       ),
     );
   }

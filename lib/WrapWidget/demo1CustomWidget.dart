@@ -52,7 +52,7 @@ class LayoutDemo2 extends StatelessWidget {
 
   List<Button2> createListWidget() {
     List<Button2> listWidget = [];
-    for(var i = 0; i < 20; i++) {
+    for (var i = 0; i < 20; i++) {
       var str = "第 ${i + 1} 集";
       listWidget.add(Button2(str, onPressed: () {}));
     }

@@ -2,13 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:learnflutterdemo/pageview/viewpager/PageIndicator.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: FlutterViewPagerBuilder(),
-      title: "Page轮播",
-    )
-  );
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: FlutterViewPagerBuilder(),
+    title: "Page轮播",
+  ));
 }
 
 // Flutter 中的 PageView，跟 Android 中的 ViewPager完全是一回事；
@@ -45,7 +43,7 @@ class FlutterPageView extends State<FlutterViewPagerBuilder> {
         backgroundColor: Colors.blue,
       ),
       body: PageView.builder(
-        scrollDirection: Axis.horizontal,
+          scrollDirection: Axis.horizontal,
           pageSnapping: true,
           allowImplicitScrolling: true,
           itemCount: widget.pageCount,
@@ -57,11 +55,7 @@ class FlutterPageView extends State<FlutterViewPagerBuilder> {
                 style: Theme.of(context).textTheme.displayLarge,
               ),
             );
-          }
-      ),
+          }),
     );
   }
 }
-
-
-

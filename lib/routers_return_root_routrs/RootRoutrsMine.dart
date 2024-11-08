@@ -6,10 +6,7 @@ class RootRoutrsMine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text(
-          "我的界面"
-      ),
+      child: Text("我的界面"),
     );
   }
 }
-

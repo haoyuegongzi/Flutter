@@ -1,4 +1,3 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -84,51 +83,29 @@ class DrawerHeaderWidget extends StatefulWidget {
 }
 
 class DrawerWidgetHeader extends State<DrawerHeaderWidget> {
-
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       child: const Text("GestureDetector的各种手势，诸如：单机，双击，长按，垂直/水平移动"),
-      onTap: ()=>{
-        print("GestureDetectorListener: onTap()")
-      },
-      onTapDown: (TapDownDetails details)=>{
+      onTap: () => {print("GestureDetectorListener: onTap()")},
+      onTapDown: (TapDownDetails details) => {
         print("GestureDetectorListener:"
             "onTapDown().localPosition.distance：${details.globalPosition.distance}, "
-            "onTapDown().globalPosition.distance：${details.globalPosition.distance}"
-        )
+            "onTapDown().globalPosition.distance：${details.globalPosition.distance}")
       },
-      onTapUp: (TapUpDetails details)=>{
+      onTapUp: (TapUpDetails details) => {
         print("GestureDetectorListener:"
             "onTapUp().localPosition.distance：${details.localPosition.distance}, "
-            "onTapUp().globalPosition.distance：${details.globalPosition.distance}"
-        )
+            "onTapUp().globalPosition.distance：${details.globalPosition.distance}")
       },
-      onTapCancel: ()=>{
-
-      },
-      onDoubleTap: ()=>{
-        print("GestureDetectorListener: onDoubleTap()")
-      },
-      onDoubleTapCancel: ()=>{
-
-      },
-      onDoubleTapDown: (TapDownDetails details)=>{
-
-      },
-      onForcePressEnd: (ForcePressDetails details)=>{
-
-      },
-      onForcePressPeak: (ForcePressDetails details)=>{
-
-      },
-      onForcePressStart: (ForcePressDetails details)=>{
-
-      },
-      onForcePressUpdate: (ForcePressDetails details)=>{
-
-      },
+      onTapCancel: () => {},
+      onDoubleTap: () => {print("GestureDetectorListener: onDoubleTap()")},
+      onDoubleTapCancel: () => {},
+      onDoubleTapDown: (TapDownDetails details) => {},
+      onForcePressEnd: (ForcePressDetails details) => {},
+      onForcePressPeak: (ForcePressDetails details) => {},
+      onForcePressStart: (ForcePressDetails details) => {},
+      onForcePressUpdate: (ForcePressDetails details) => {},
       //// TODO: onHorizontalDragxxx 和 onVerticalDragxxx 事件不能同时出现
       // onHorizontalDragCancel: ()=>{
       //
@@ -146,57 +123,23 @@ class DrawerWidgetHeader extends State<DrawerHeaderWidget> {
       //
       // },
       //// TODO：执行 onLongPress()时，onTapDown()也会被执行，这点要特别注意。
-      onLongPress: ()=>{
-        print("GestureDetectorListener: onLongPress()")
-      },
-      onLongPressCancel: ()=>{
-
-      },
-      onLongPressDown: (LongPressDownDetails details)=>{
-
-      },
-      onLongPressEnd: (LongPressEndDetails details)=>{
-
-      },
-      onLongPressMoveUpdate: (LongPressMoveUpdateDetails details)=>{
-
-      },
-      onLongPressStart: (LongPressStartDetails detail)=>{
-
-      },
-      onLongPressUp: ()=>{
-        print("GestureDetectorListener: onLongPressUp()")
-      },
-      onVerticalDragDown: (DragDownDetails details)=>{
-
-      },
-      onVerticalDragEnd: (DragEndDetails details)=>{
-
-      },
-      onVerticalDragStart: (DragStartDetails details)=>{
-
-      },
-      onVerticalDragUpdate: (DragUpdateDetails details)=>{
-
-      },
-      onVerticalDragCancel: ()=>{
-
-      },
-      onPanDown: (DragDownDetails details)=>{
-
-      },
-      onPanEnd: (DragEndDetails details)=>{
-
-      },
-      onPanStart: (DragStartDetails details)=>{
-
-      },
-      onPanUpdate: (DragUpdateDetails details)=>{
-
-      },
-      onPanCancel: ()=>{
-
-      },
+      onLongPress: () => {print("GestureDetectorListener: onLongPress()")},
+      onLongPressCancel: () => {},
+      onLongPressDown: (LongPressDownDetails details) => {},
+      onLongPressEnd: (LongPressEndDetails details) => {},
+      onLongPressMoveUpdate: (LongPressMoveUpdateDetails details) => {},
+      onLongPressStart: (LongPressStartDetails detail) => {},
+      onLongPressUp: () => {print("GestureDetectorListener: onLongPressUp()")},
+      onVerticalDragDown: (DragDownDetails details) => {},
+      onVerticalDragEnd: (DragEndDetails details) => {},
+      onVerticalDragStart: (DragStartDetails details) => {},
+      onVerticalDragUpdate: (DragUpdateDetails details) => {},
+      onVerticalDragCancel: () => {},
+      onPanDown: (DragDownDetails details) => {},
+      onPanEnd: (DragEndDetails details) => {},
+      onPanStart: (DragStartDetails details) => {},
+      onPanUpdate: (DragUpdateDetails details) => {},
+      onPanCancel: () => {},
       // onScaleStart: (ScaleStartDetails details)=>{
       //
       // },
@@ -215,28 +158,6 @@ class DrawerWidgetHeader extends State<DrawerHeaderWidget> {
   }
 
   void setEventState() {
-    setState(() {
-
-    });
+    setState(() {});
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

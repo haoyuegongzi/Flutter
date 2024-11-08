@@ -30,12 +30,14 @@ class HomeTab extends StatefulWidget {
 class CreateHomeTab extends State<HomeTab> {
   // 这里设置默认选中哪一个 Item
   int currenPosition = 0;
-  final List<Widget> widgetList = const[
-    HomePageWidget(), BillOerder(),
-    Emergency(), MinePage()
+  final List<Widget> widgetList = const [
+    HomePageWidget(),
+    BillOerder(),
+    Emergency(),
+    MinePage()
   ];
 
-  final List<BottomNavigationBarItem> bottomNavigationList = const[
+  final List<BottomNavigationBarItem> bottomNavigationList = const [
     BottomNavigationBarItem(
         icon: Icon(
           Icons.account_balance,
@@ -89,13 +91,10 @@ class CreateHomeTab extends State<HomeTab> {
         // selectedItemColor: Colors.blue,
         // unselectedItemColor: Colors.black26,
         selectedLabelStyle: const TextStyle(color: Colors.blue, fontSize: 16),
-        unselectedLabelStyle: const TextStyle(color: Colors.black45, fontSize: 13),
-        selectedIconTheme: const IconThemeData(
-          color: Colors.blue
-        ),
-        unselectedIconTheme: const IconThemeData(
-          color: Colors.black26
-        ),
+        unselectedLabelStyle:
+            const TextStyle(color: Colors.black45, fontSize: 13),
+        selectedIconTheme: const IconThemeData(color: Colors.blue),
+        unselectedIconTheme: const IconThemeData(color: Colors.black26),
         backgroundColor: Colors.black12,
         iconSize: 18,
         // 下面几行是实现 底部导航栏 实现 点击选中 效果的关键；

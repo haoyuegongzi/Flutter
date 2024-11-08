@@ -32,35 +32,27 @@ class HomePageFunction extends State<CupertinoPageRouteAndThemeHomePage> {
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-            OutlinedButton(
-              onPressed: () {
-                Map argumentsMap = {
-                  "title": "去 注册的第一个 路由页面",
-                  "aid": 41
-                };
-                print(argumentsMap);
-                // 下面两种方式都是可以成功跳转的。
-                Navigator.of(context).pushNamed("/first",
-                    arguments: argumentsMap
-                );
-                // Navigator.pushNamed(context, "/values",
-                //     arguments: argumentsMap
-                // );
-
-              },
-              child: const Text(
-                  "命名路由传值：去 注册的第一个 路由页面",
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.teal,
-                      fontStyle: FontStyle.normal)
-              ),
-            )
-          ],
-        )
-      ),
+          child: Column(
+        children: [
+          OutlinedButton(
+            onPressed: () {
+              Map argumentsMap = {"title": "去 注册的第一个 路由页面", "aid": 41};
+              print(argumentsMap);
+              // 下面两种方式都是可以成功跳转的。
+              Navigator.of(context)
+                  .pushNamed("/first", arguments: argumentsMap);
+              // Navigator.pushNamed(context, "/values",
+              //     arguments: argumentsMap
+              // );
+            },
+            child: const Text("命名路由传值：去 注册的第一个 路由页面",
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.teal,
+                    fontStyle: FontStyle.normal)),
+          )
+        ],
+      )),
     );
   }
 }

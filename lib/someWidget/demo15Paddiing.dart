@@ -49,10 +49,7 @@ class PaddingWidget extends StatelessWidget {
       padding: EdgeInsets.all(15),
       child: Text(
         "通过 Pading Widget 这个组件来实现 内间距",
-        style: TextStyle(
-            color: Colors.lime,
-            backgroundColor: Colors.black54
-        ),
+        style: TextStyle(color: Colors.lime, backgroundColor: Colors.black54),
       ),
     );
   }
@@ -77,63 +74,9 @@ class PaddingWidgetMarginPading extends StatelessWidget {
         padding: EdgeInsets.all(15),
         child: Text(
           "这里是通过 PaddingWidget组件+margin属性+padding属性实现的一个Widget",
-          style: TextStyle(
-            color: Colors.black,
-            backgroundColor: Colors.orange
-          ),
+          style: TextStyle(color: Colors.black, backgroundColor: Colors.orange),
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

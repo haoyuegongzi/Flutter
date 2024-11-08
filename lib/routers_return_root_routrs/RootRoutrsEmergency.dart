@@ -6,9 +6,7 @@ class RootRoutrsEmergency extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text(
-          "紧急事件"
-      ),
+      child: Text("紧急事件"),
     );
   }
 }

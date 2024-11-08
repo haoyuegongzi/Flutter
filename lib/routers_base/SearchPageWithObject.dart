@@ -13,12 +13,9 @@ class SearchPageWithObject extends StatefulWidget {
 }
 
 class SearchFunction extends State<SearchPageWithObject> {
-
   String title = "";
 
-  SearchFunction(this.title) {
-
-  }
+  SearchFunction(this.title) {}
 
   @override
   void initState() {

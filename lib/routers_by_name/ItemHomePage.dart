@@ -33,56 +33,46 @@ class HomePageFunction extends State<ItemHomePage> {
         ),
       ),
       body: Center(
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator
-                    .of(context)
-                    .push(MaterialPageRoute(builder: (BuildContext context) {
-                  return const Category();
-                }));
-              },
-              child: const Text(
-                  "通过基本路由跳转去Category页面",
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.teal,
-                      fontStyle: FontStyle.normal)
-              ),
-            ),
-            const Divider(),
-            TextButton(
-              onPressed: () {
-                print("命名路由 跳转去search页面");
-                Navigator
-                    .of(context)
-                    .pushNamed("/search");
-              },
-              child: const Text(
-                  "通过命名路由 跳转去search页面",
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.teal,
-                      fontStyle: FontStyle.normal)
-              ),
-            ),
-            const Divider(),
-            OutlinedButton(
-              onPressed: () {
-                print("功能还未开发");
-              },
-              child: const Text(
-                  "带参跳转的命名路由实现",
-                  style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.teal,
-                      fontStyle: FontStyle.normal)
-              ),
-            )
-          ],
-        )
-      ),
+          child: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) {
+                return const Category();
+              }));
+            },
+            child: const Text("通过基本路由跳转去Category页面",
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.teal,
+                    fontStyle: FontStyle.normal)),
+          ),
+          const Divider(),
+          TextButton(
+            onPressed: () {
+              print("命名路由 跳转去search页面");
+              Navigator.of(context).pushNamed("/search");
+            },
+            child: const Text("通过命名路由 跳转去search页面",
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.teal,
+                    fontStyle: FontStyle.normal)),
+          ),
+          const Divider(),
+          OutlinedButton(
+            onPressed: () {
+              print("功能还未开发");
+            },
+            child: const Text("带参跳转的命名路由实现",
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.teal,
+                    fontStyle: FontStyle.normal)),
+          )
+        ],
+      )),
     );
   }
 }

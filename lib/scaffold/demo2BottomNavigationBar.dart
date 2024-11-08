@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(
-      const BottomNavigationWidget()
+  runApp(const BottomNavigationWidget()
       // const MyApp()
       );
 }
@@ -29,19 +28,19 @@ class BottomNavigationWidget extends StatelessWidget {
           backgroundColor: Colors.blueGrey,
           items: const [
             BottomNavigationBarItem(
-                tooltip: "选运动",
-                icon: Icon(Icons.home, color: Colors.blue),
-                label: "运动",
+              tooltip: "选运动",
+              icon: Icon(Icons.home, color: Colors.blue),
+              label: "运动",
             ),
             BottomNavigationBarItem(
-                tooltip: "选甲虫",
-                icon: Icon(Icons.home, color: Colors.black38),
-                label: "甲虫",
+              tooltip: "选甲虫",
+              icon: Icon(Icons.home, color: Colors.black38),
+              label: "甲虫",
             ),
             BottomNavigationBarItem(
-                tooltip: "选急救",
-                icon: Icon(Icons.home, color: Colors.black38),
-                label: "急救",
+              tooltip: "选急救",
+              icon: Icon(Icons.home, color: Colors.black38),
+              label: "急救",
             ),
           ],
         ),

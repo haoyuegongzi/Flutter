@@ -2,22 +2,20 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-      MaterialApp(
-        theme: ThemeData(
-          primarySwatch:Colors.brown,
+  runApp(MaterialApp(
+    theme: ThemeData(
+      primarySwatch: Colors.brown,
+    ),
+    home: Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "学习ICON",
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text(
-              "学习ICON",
-            ),
-          ),
-          // body: const MyIcon(),
-            body: const MyCustomerIcon(),
-        ),
-      )
-  );
+      ),
+      // body: const MyIcon(),
+      body: const MyCustomerIcon(),
+    ),
+  ));
 }
 
 // 下面使用Flutter系统自带的icon
@@ -27,43 +25,32 @@ class MyIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-        child: Row(// Column: 列；Row: 行
-          // 一个 图标list，图标都是系统自带的。分别是：搜索图标，主页图标，分类图标，购物图标
-          children: [
-            Icon(Icons.search,
-                color: Colors.red,
-                size: 40
-            ),
-            SizedBox(
-                height: 10
-            ),
-            Icon(
-                Icons.home,
-              color: Colors.blue,
-              size: 40,
-            ),
-            SizedBox(
-                height: 10
-            ),
-            Icon(
-                Icons.category,
-              color: Colors.purple,
-              size: 40,
-            ),
-            SizedBox(
-                height: 10
-            ),
-            Icon(
-                Icons.shop,
-              color: Colors.cyan,
-              size: 40,
-            ),
-            SizedBox(
-                height: 10
-            ),
-          ],
-        )
-    );
+        child: Row(
+      // Column: 列；Row: 行
+      // 一个 图标list，图标都是系统自带的。分别是：搜索图标，主页图标，分类图标，购物图标
+      children: [
+        Icon(Icons.search, color: Colors.red, size: 40),
+        SizedBox(height: 10),
+        Icon(
+          Icons.home,
+          color: Colors.blue,
+          size: 40,
+        ),
+        SizedBox(height: 10),
+        Icon(
+          Icons.category,
+          color: Colors.purple,
+          size: 40,
+        ),
+        SizedBox(height: 10),
+        Icon(
+          Icons.shop,
+          color: Colors.cyan,
+          size: 40,
+        ),
+        SizedBox(height: 10),
+      ],
+    ));
   }
 }
 
@@ -74,25 +61,25 @@ class MyCustomerIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-        child: Row(// Column: 列；Row: 行
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Icon(CustomerIcon.book,color: Colors.purple),
-            Icon(CustomerIcon.wechat,color: Colors.green),
-            // 下面，我们可以通过 Icons.xxxx 的形式去获取 各种icon。
-            // Icon(
-            //   Icons.ac_unit,
-            //   color: Colors.teal,
-            //   size: 32,
-            // ),
-            // Icon(
-            //   Icons.access_time_filled_sharp,
-            //   color: Colors.purple,
-            //   size: 32,
-            // )
-          ],
-        )
-    );
+        child: Row(
+      // Column: 列；Row: 行
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(CustomerIcon.book, color: Colors.purple),
+        Icon(CustomerIcon.wechat, color: Colors.green),
+        // 下面，我们可以通过 Icons.xxxx 的形式去获取 各种icon。
+        // Icon(
+        //   Icons.ac_unit,
+        //   color: Colors.teal,
+        //   size: 32,
+        // ),
+        // Icon(
+        //   Icons.access_time_filled_sharp,
+        //   color: Colors.purple,
+        //   size: 32,
+        // )
+      ],
+    ));
   }
 }
 
@@ -103,19 +90,12 @@ class MyCustomerIcon extends StatelessWidget {
 class CustomerIcon {
   // book 图标
   static const IconData book = IconData(
-      0xe64f,// 这里的值，来自于 fonts文件夹下的 xxxx.json 的文件中 的 “unicode”字段。这里不能错，错了就找不到了
-      fontFamily: 'CustomerIcon',// 这里的名称 与 pubspec.yaml 中配置的名称一致。
-      matchTextDirection: true
-  );
+      0xe64f, // 这里的值，来自于 fonts文件夹下的 xxxx.json 的文件中 的 “unicode”字段。这里不能错，错了就找不到了
+      fontFamily: 'CustomerIcon', // 这里的名称 与 pubspec.yaml 中配置的名称一致。
+      matchTextDirection: true);
   // 微信图标
   static const IconData wechat = IconData(
-      0xe6cd,// 这里的值，来自于 fonts文件夹下的 xxxx.json 的文件中 的 “unicode”字段。这里不能错，错了就找不到了
+      0xe6cd, // 这里的值，来自于 fonts文件夹下的 xxxx.json 的文件中 的 “unicode”字段。这里不能错，错了就找不到了
       fontFamily: 'CustomerIcon',
-      matchTextDirection: true
-  );
+      matchTextDirection: true);
 }
-
-
-
-
-

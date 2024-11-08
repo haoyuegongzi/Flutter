@@ -18,15 +18,19 @@ void main() {
 }
 
 class CupertinoPageRouteAndThemeRouters extends StatelessWidget {
-  final Map<String,Function> routesMap = {
-    "/home": (context, {arguments})=>const CupertinoPageRouteAndThemeHomePage(),
-    "/bill": (context, {arguments})=>const CupertinoPageRouteAndThemeBillOrder(),
-    "/emergency": (context, {arguments})=>const CupertinoPageRouteAndThemeEmergency(),
-    "/mine": (context, {arguments})=>const CupertinoPageRouteAndThemeMine(),
-    "/first": (context, {arguments})=>const CupertinoPageRouteAndTheme1(),
-    "/second": (context, {arguments})=>const CupertinoPageRouteAndTheme2(),
-    "/third": (context, {arguments})=>const CupertinoPageRouteAndTheme3(),
-    "/register": (context, {arguments})=>CupertinoPageRouteAndTheme4(valuesRoute:arguments)
+  final Map<String, Function> routesMap = {
+    "/home": (context, {arguments}) =>
+        const CupertinoPageRouteAndThemeHomePage(),
+    "/bill": (context, {arguments}) =>
+        const CupertinoPageRouteAndThemeBillOrder(),
+    "/emergency": (context, {arguments}) =>
+        const CupertinoPageRouteAndThemeEmergency(),
+    "/mine": (context, {arguments}) => const CupertinoPageRouteAndThemeMine(),
+    "/first": (context, {arguments}) => const CupertinoPageRouteAndTheme1(),
+    "/second": (context, {arguments}) => const CupertinoPageRouteAndTheme2(),
+    "/third": (context, {arguments}) => const CupertinoPageRouteAndTheme3(),
+    "/register": (context, {arguments}) =>
+        CupertinoPageRouteAndTheme4(valuesRoute: arguments)
     // 注意，注意，注意：context 后面的参数，必须是/只能是/唯一的 “arguments”；
     //                RoutesRegisterValues 的构造方法里面的 入参，必须跟 RoutesValues 的class类里面定义的一致；
     // 否则，会有意想不到的错误；这个算是固定写法；
@@ -37,54 +41,32 @@ class CupertinoPageRouteAndThemeRouters extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "基本的命名路由",
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.orange),
-      color: Colors.lightBlueAccent,
-      initialRoute: "/",
-      onGenerateRoute: (RouteSettings settings){
-        final String? name = settings.name;
-        final Function? pageContentBuilder = routesMap[name];
+        title: "基本的命名路由",
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.orange),
+        color: Colors.lightBlueAccent,
+        initialRoute: "/",
+        onGenerateRoute: (RouteSettings settings) {
+          final String? name = settings.name;
+          final Function? pageContentBuilder = routesMap[name];
 
-        if (pageContentBuilder != null) {
-          if (settings.arguments != null) {
-            // 这里，将 适配于 Android 的 MaterialPageRoute 风格路由，替换为适配了 iOS 的 CupertinoPageRoute 路由；
-            // 特点是 界面切换时的风格不一样：Android 的 上下 / 闪一下 切换为 iOS 的  左右滑动切换；
-            final Route route = CupertinoPageRoute(
-                builder: (context) =>
-                    pageContentBuilder(context, arguments: settings.arguments));
-            return route;
-          } else {
-            final Route route =
-            CupertinoPageRoute(builder: (context) => pageContentBuilder(context));
-            return route;
+          if (pageContentBuilder != null) {
+            if (settings.arguments != null) {
+              // 这里，将 适配于 Android 的 MaterialPageRoute 风格路由，替换为适配了 iOS 的 CupertinoPageRoute 路由；
+              // 特点是 界面切换时的风格不一样：Android 的 上下 / 闪一下 切换为 iOS 的  左右滑动切换；
+              final Route route = CupertinoPageRoute(
+                  builder: (context) => pageContentBuilder(context,
+                      arguments: settings.arguments));
+              return route;
+            } else {
+              final Route route = CupertinoPageRoute(
+                  builder: (context) => pageContentBuilder(context));
+              return route;
+            }
           }
-        }
-        print("RoutesSearchPageByName()");
-        return  null;
-      },
-      home: const CupertinoPageRouteAndThemeHomePage()
-    );
+          print("RoutesSearchPageByName()");
+          return null;
+        },
+        home: const CupertinoPageRouteAndThemeHomePage());
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -34,7 +34,9 @@ class StreamFullImplWidget extends State<StreamFullWidget> {
       body: StreamBuilder<int>(
         stream: sController.stream,
         builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
-          return snapshot.data == null ? const Text("没有收到数据") : Text("收到的数据是：${snapshot.data}");
+          return snapshot.data == null
+              ? const Text("没有收到数据")
+              : Text("收到的数据是：${snapshot.data}");
         },
       ),
       floatingActionButton: FloatingActionButton(
@@ -46,22 +48,3 @@ class StreamFullImplWidget extends State<StreamFullWidget> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

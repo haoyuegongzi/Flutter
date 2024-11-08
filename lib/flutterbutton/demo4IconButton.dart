@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "OutlinedButton边框按钮是什么鬼",
-            style: TextStyle(
-                fontSize: 24,
-                color: Colors.deepPurple,
-                fontStyle: FontStyle.italic,
-                fontFamily: "fontFamily啥作用的属性？"
-            ),
-          ),
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "OutlinedButton边框按钮是什么鬼",
+          style: TextStyle(
+              fontSize: 24,
+              color: Colors.deepPurple,
+              fontStyle: FontStyle.italic,
+              fontFamily: "fontFamily啥作用的属性？"),
         ),
-        body: const IconButtonWidget(),
       ),
-    )
-  );
+      body: const IconButtonWidget(),
+    ),
+  ));
 }
 
 // IconButton 是一个可点击的Icon，不包括文字，默认没有背景，点击后会出现背景
@@ -29,23 +26,9 @@ class IconButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {
-        print("Icon按钮又是啥？");
-      },
-      icon: const Icon(
-      Icons.account_circle
-      )
-    );
+        onPressed: () {
+          print("Icon按钮又是啥？");
+        },
+        icon: const Icon(Icons.account_circle));
   }
 }
-
-
-
-
-
-
-
-
-
-
-

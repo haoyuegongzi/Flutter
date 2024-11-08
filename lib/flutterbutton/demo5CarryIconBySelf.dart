@@ -1,24 +1,21 @@
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            "文本按钮",
-            style: TextStyle(
-                fontSize: 24,
-                color: Colors.deepPurple,
-                fontStyle: FontStyle.italic,
-                fontFamily: "fontFamily啥作用的属性？"
-            ),
-          ),
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "文本按钮",
+          style: TextStyle(
+              fontSize: 24,
+              color: Colors.deepPurple,
+              fontStyle: FontStyle.italic,
+              fontFamily: "fontFamily啥作用的属性？"),
         ),
-        body: const AllkindsOfButton(),
       ),
-    )
-  );
+      body: const AllkindsOfButton(),
+    ),
+  ));
 }
 
 // 无论是 ElevatedButton、TextButton，还是OutlinedButton、IconButton，他们都自带一个Icon的构造函数，
@@ -36,45 +33,19 @@ class AllkindsOfButton extends StatelessWidget {
         ElevatedButton.icon(
           icon: const Icon(Icons.send),
           label: const Text("发送"),
-          onPressed: () {
-            
-          },
+          onPressed: () {},
         ),
         TextButton.icon(
-          onPressed: () {
-
-          },
-          icon: const Icon(Icons.add),
-          label: const Text(
-          "TextButton文本按钮"
-          )
-        ),
+            onPressed: () {},
+            icon: const Icon(Icons.add),
+            label: const Text("TextButton文本按钮")),
         OutlinedButton.icon(
-          onPressed: () {
-
-          },
-          label: const Text(
-              "OutlinedButton边框按钮"
-          ),
+          onPressed: () {},
+          label: const Text("OutlinedButton边框按钮"),
           icon: const Icon(Icons.info),
         ),
-        IconButton(
-          onPressed: () {
-          
-          },
-          icon: const Icon(
-              Icons.access_time
-          )
-        )
+        IconButton(onPressed: () {}, icon: const Icon(Icons.access_time))
       ],
     );
   }
-
 }
-
-
-
-
-
-
-

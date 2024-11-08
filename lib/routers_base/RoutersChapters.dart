@@ -159,11 +159,14 @@ class CreateHomeTab extends State<HomeTab> with SingleTickerProviderStateMixin {
     //      3、好处是：可以同时监听 点击事件 和 滑动事件。
     mTabController.addListener(() {
       // 这个 判断可以过滤监听被多次调用；只调用一次。
-      if (mTabController.animation!.value == mTabController.index) {// mTabController 的 animation 有可能为空。
-        print("addListener() mTabController.animation.value：${mTabController.animation!.value}");
+      if (mTabController.animation!.value == mTabController.index) {
+        // mTabController 的 animation 有可能为空。
+        print(
+            "addListener() mTabController.animation.value：${mTabController.animation!.value}");
       }
     });
   }
+
   // 要监听界面的 位置index，有以下两种方式实现：
   //    1、在 initState() 方法里面给 mTabController 添加 addListener() 监听；
   //    2、在 TabBar 内部 添加 onTap:(index) 监听。
@@ -249,7 +252,8 @@ class CreateHomeTab extends State<HomeTab> with SingleTickerProviderStateMixin {
               indicatorColor: Colors.red,
               labelStyle: const TextStyle(color: Colors.red, fontSize: 16),
               unselectedLabelColor: Colors.black,
-              unselectedLabelStyle: const TextStyle(color: Colors.black, fontSize: 13),
+              unselectedLabelStyle:
+                  const TextStyle(color: Colors.black, fontSize: 13),
               // onTap()监听 只能监听到 点击事件，监听不到滑动事件。
               onTap: (index) {
                 print("onTap(): index = $index}");

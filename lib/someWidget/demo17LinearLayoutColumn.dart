@@ -8,12 +8,9 @@ main() {
     home: Scaffold(
       appBar: AppBar(
         title: const Text(
-            "线性布局组件的 列 属性，相当于Android中的Ver方向",
+          "线性布局组件的 列 属性，相当于Android中的Ver方向",
           style: TextStyle(
-            fontSize: 24,
-            color: Colors.red,
-            fontWeight: FontWeight.w400
-          ),
+              fontSize: 24, color: Colors.red, fontWeight: FontWeight.w400),
         ),
       ),
       body: const ColumnView(),

@@ -295,8 +295,7 @@ class CardVideoInfoWidget extends StatelessWidget {
         children: [
           Card(
             shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(10))
-            ),
+                borderRadius: BorderRadius.all(Radius.circular(10))),
             elevation: 10,
             shadowColor: Colors.black54,
             child: Image.network(
@@ -306,7 +305,6 @@ class CardVideoInfoWidget extends StatelessWidget {
               fit: BoxFit.fill,
             ),
           ),
-
         ],
       ),
     );

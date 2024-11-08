@@ -8,9 +8,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 // 3、fluttertoast库配置在 pubspec.yaml里面的 cupertino_icons: ^1.0.6 库后面。
 main() {
   runApp(const MaterialApp(
-    debugShowCheckedModeBanner: false,
-    title: "Dialog示例",
-    home: DialogWidget()));
+      debugShowCheckedModeBanner: false,
+      title: "Dialog示例",
+      home: DialogWidget()));
 }
 
 class DialogWidget extends StatefulWidget {
@@ -40,30 +40,27 @@ class DialogList extends State<DialogWidget> {
         builder: (context) {
           return AlertDialog(
             title: const Text(
-                "警告",
+              "警告",
               style: TextStyle(
-                fontSize: 16,
-                fontStyle: FontStyle.italic,
-                color: Colors.black
-              ),
+                  fontSize: 16,
+                  fontStyle: FontStyle.italic,
+                  color: Colors.black),
             ),
             content: const Text(
-                "您确定要删除吗?",
+              "您确定要删除吗?",
               style: TextStyle(
                   fontSize: 13,
                   fontStyle: FontStyle.italic,
-                  color: Colors.black54
-              ),
+                  color: Colors.black54),
             ),
             actions: <Widget>[
               TextButton(
                 child: const Text(
-                    "取消",
+                  "取消",
                   style: TextStyle(
                       fontSize: 13,
                       fontStyle: FontStyle.normal,
-                      color: Colors.black
-                  ),
+                      color: Colors.black),
                 ),
                 onPressed: () {
                   print("取消");
@@ -72,12 +69,11 @@ class DialogList extends State<DialogWidget> {
               ),
               TextButton(
                 child: const Text(
-                    "确定",
+                  "确定",
                   style: TextStyle(
                       fontSize: 13,
                       fontStyle: FontStyle.normal,
-                      color: Colors.redAccent
-                  ),
+                      color: Colors.redAccent),
                 ),
                 onPressed: () {
                   print("确定");
@@ -101,22 +97,20 @@ class DialogList extends State<DialogWidget> {
         builder: (context) {
           return SimpleDialog(
             title: const Text(
-                "请选择内容",
+              "请选择内容",
               style: TextStyle(
                   fontSize: 16,
                   fontStyle: FontStyle.italic,
-                  color: Colors.black
-              ),
+                  color: Colors.black),
             ),
             children: <Widget>[
               SimpleDialogOption(
                 child: const Text(
-                    "Option A",
+                  "Option A",
                   style: TextStyle(
                       fontSize: 13,
                       fontStyle: FontStyle.italic,
-                      color: Colors.orange
-                  ),
+                      color: Colors.orange),
                 ),
                 onPressed: () {
                   print("Option A");
@@ -126,12 +120,11 @@ class DialogList extends State<DialogWidget> {
               const Divider(),
               SimpleDialogOption(
                 child: const Text(
-                    "Option B",
+                  "Option B",
                   style: TextStyle(
                       fontSize: 13,
                       fontStyle: FontStyle.italic,
-                      color: Colors.orange
-                  ),
+                      color: Colors.orange),
                 ),
                 onPressed: () {
                   print("Option B");
@@ -141,12 +134,11 @@ class DialogList extends State<DialogWidget> {
               const Divider(),
               SimpleDialogOption(
                 child: const Text(
-                    "Option C",
+                  "Option C",
                   style: TextStyle(
                       fontSize: 13,
                       fontStyle: FontStyle.italic,
-                      color: Colors.orange
-                  ),
+                      color: Colors.orange),
                 ),
                 onPressed: () {
                   print("Option C");
@@ -172,12 +164,11 @@ class DialogList extends State<DialogWidget> {
               children: <Widget>[
                 ListTile(
                   title: const Text(
-                      "分享 A",
+                    "分享 A",
                     style: TextStyle(
                         fontSize: 16,
                         fontStyle: FontStyle.italic,
-                        color: Colors.black
-                    ),
+                        color: Colors.black),
                   ),
                   onTap: () {
                     Navigator.pop(context, "分享 A");
@@ -190,8 +181,7 @@ class DialogList extends State<DialogWidget> {
                     style: TextStyle(
                         fontSize: 16,
                         fontStyle: FontStyle.italic,
-                        color: Colors.black
-                    ),
+                        color: Colors.black),
                   ),
                   onTap: () {
                     Navigator.pop(context, "分享 B");
@@ -204,8 +194,7 @@ class DialogList extends State<DialogWidget> {
                     style: TextStyle(
                         fontSize: 16,
                         fontStyle: FontStyle.italic,
-                        color: Colors.black
-                    ),
+                        color: Colors.black),
                   ),
                   onTap: () {
                     Navigator.pop(context, "分享 C");
@@ -265,115 +254,116 @@ class DialogList extends State<DialogWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Center(
-            child: Text(
-              "Dialog 与 Toast",
-              style: TextStyle(color: Colors.black, fontSize: 28),
-            ),
+      appBar: AppBar(
+        title: const Center(
+          child: Text(
+            "Dialog 与 Toast",
+            style: TextStyle(color: Colors.black, fontSize: 28),
           ),
         ),
-        body: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                showAlertDialog();
-                print("这里是 AlertDialog 的示例");
-              },
-              child: const Text(
-                "AlertDialog"
-              ),
-            ),
-            const Divider(),
-            ElevatedButton(
-              onPressed: () {
-                showSimpleDialog();
-                print("这里是 SimpleDialog 的示例");
-              },
-              child: const Text(
-                  "SimpleDialog"
-              ),
-            ),
-            const Divider(),
-            ElevatedButton(
-              onPressed: () {
-                showModelBottomSheetDialogOrPopupWindow();
-                print("这里是Dialog 或者 PopuWindow 的示例");
-              },
-              child: const Text(
-                  "BottomSheetDialogOrPopuWindow"
-              ),
-            ),
-            const Divider(),
-            ElevatedButton(
-              onPressed: () {
-                showToast();
-                print("这里是 showToast 的示例");
-              },
-              child: const Text(
-                  "showToast"
-              ),
-            ),
-            const Divider(),
-            ElevatedButton(
-              onPressed: () {
-                // SnackBar.createAnimationController(vsync: vsync)
-                // 1. 为什么要选择插件, 不选择原生呢... 因为Flutter没有我们所需的这种效果! 只有自带的snackBar!
-                // 2. Fluttertoast的精华都在这里：https://www.bugcatt.com/archives/1179
-                showToast2();
-                print("这里是 showToast 的示例");
-              },
-              child: const Text(
-              "showToast"
-              ),
-            ),
-            const Divider(),
-          ],
-        ),
+      ),
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              showAlertDialog();
+              print("这里是 AlertDialog 的示例");
+            },
+            child: const Text("AlertDialog"),
+          ),
+          const Divider(),
+          ElevatedButton(
+            onPressed: () {
+              showSimpleDialog();
+              print("这里是 SimpleDialog 的示例");
+            },
+            child: const Text("SimpleDialog"),
+          ),
+          const Divider(),
+          ElevatedButton(
+            onPressed: () {
+              showModelBottomSheetDialogOrPopupWindow();
+              print("这里是Dialog 或者 PopuWindow 的示例");
+            },
+            child: const Text("BottomSheetDialogOrPopuWindow"),
+          ),
+          const Divider(),
+          ElevatedButton(
+            onPressed: () {
+              showToast();
+              print("这里是 showToast 的示例");
+            },
+            child: const Text("showToast"),
+          ),
+          const Divider(),
+          ElevatedButton(
+            onPressed: () {
+              // SnackBar.createAnimationController(vsync: vsync)
+              // 1. 为什么要选择插件, 不选择原生呢... 因为Flutter没有我们所需的这种效果! 只有自带的snackBar!
+              // 2. Fluttertoast的精华都在这里：https://www.bugcatt.com/archives/1179
+              showToast2();
+              print("这里是 showToast 的示例");
+            },
+            child: const Text("showToast"),
+          ),
+          const Divider(),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          selectedLabelStyle: const TextStyle(color: Colors.blue, fontSize: 18),
-          unselectedLabelStyle: const TextStyle(color: Colors.black45, fontSize: 12),
-          selectedIconTheme: const IconThemeData(color: Colors.blue),
-          unselectedIconTheme: const IconThemeData(color: Colors.black26),
-          backgroundColor: Colors.lightBlueAccent,
-          // 控制Icon的尺寸大小
-          iconSize: 18,
-          // 下面几行是实现 底部导航栏 实现 点击选中 效果的关键；
-          currentIndex: currenPosition,
-          onTap: (index) {
-            setState(() {
-              currenPosition = index;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.account_balance, color: Colors.black26,
-                ),
-                label: "首页", backgroundColor: Colors.blueGrey),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.add_chart, color: Colors.black26,
-                ),
-                label: "账单", backgroundColor: Colors.blueGrey),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.add_alarm_sharp, color: Colors.black26,
-                ),
-                label: "紧急事件", backgroundColor: Colors.blueGrey),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.ac_unit, color: Colors.black26,
-                ),
-                label: "冷饮", backgroundColor: Colors.blueGrey),
-            BottomNavigationBarItem(
-                icon: Icon(
-                  Icons.account_circle, color: Colors.black26,
-                ),
-                label: "我的", backgroundColor: Colors.blueGrey)
-          ],
-        ),
+        type: BottomNavigationBarType.fixed,
+        selectedLabelStyle: const TextStyle(color: Colors.blue, fontSize: 18),
+        unselectedLabelStyle:
+            const TextStyle(color: Colors.black45, fontSize: 12),
+        selectedIconTheme: const IconThemeData(color: Colors.blue),
+        unselectedIconTheme: const IconThemeData(color: Colors.black26),
+        backgroundColor: Colors.lightBlueAccent,
+        // 控制Icon的尺寸大小
+        iconSize: 18,
+        // 下面几行是实现 底部导航栏 实现 点击选中 效果的关键；
+        currentIndex: currenPosition,
+        onTap: (index) {
+          setState(() {
+            currenPosition = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_balance,
+                color: Colors.black26,
+              ),
+              label: "首页",
+              backgroundColor: Colors.blueGrey),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add_chart,
+                color: Colors.black26,
+              ),
+              label: "账单",
+              backgroundColor: Colors.blueGrey),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add_alarm_sharp,
+                color: Colors.black26,
+              ),
+              label: "紧急事件",
+              backgroundColor: Colors.blueGrey),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.ac_unit,
+                color: Colors.black26,
+              ),
+              label: "冷饮",
+              backgroundColor: Colors.blueGrey),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.account_circle,
+                color: Colors.black26,
+              ),
+              label: "我的",
+              backgroundColor: Colors.blueGrey)
+        ],
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           print("这个浮动按钮有什么鸟用呢？");
@@ -381,7 +371,8 @@ class DialogList extends State<DialogWidget> {
         child: const Icon(Icons.add_circle_outline),
       ),
       // 下面这个属性，用来控制 floatingActionButton 在界面上的位置。
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterDocked,
     );
   }
 }

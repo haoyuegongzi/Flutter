@@ -12,7 +12,7 @@ void requestGetData() async {
   var client = http.Client();
   var uri = Uri.parse("https://wanandroid.com/harmony/index/json");
   var response = await client.get(uri);
-  if(response.statusCode == 200) {
+  if (response.statusCode == 200) {
     print("http-Flutter 网络GET请求：${response.body}");
   } else {
     print("http-Flutter 网络GET请求：${response.statusCode}");
@@ -23,16 +23,15 @@ void requestGetData() async {
 void requestPostData() async {
   var client = http.Client();
   var uri = Uri.parse("https://www.wanandroid.com/user/login");
-  Map<String, String> loginMap = {"username":"gongzi", "password":"gong*163ZI"};
+  Map<String, String> loginMap = {
+    "username": "gongzi",
+    "password": "gong*163ZI"
+  };
   var response = await client.post(uri, body: loginMap);
-  if(response.statusCode == 200) {
+  if (response.statusCode == 200) {
     print("http-Flutter 网络Post请求：${response.body}");
   } else {
     print("http-Flutter 网络Post请求：${response.statusCode}");
   }
   client.close();
 }
-
-
-
-

@@ -3,14 +3,13 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:learnflutterdemo/pageview/autobanner/BannerStack.dart';
 import 'package:learnflutterdemo/pageview/banner/BannerListWidget.dart';
+
 void main() {
-  runApp(
-    const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "自动播放的banner轮播图",
-      home: AutoBannerWithIndicator(),
-    )
-  );
+  runApp(const MaterialApp(
+    debugShowCheckedModeBanner: false,
+    title: "自动播放的banner轮播图",
+    home: AutoBannerWithIndicator(),
+  ));
 }
 
 class AutoBannerWithIndicator extends StatefulWidget {
@@ -35,11 +34,10 @@ class PageViewBannerImpl extends State<AutoBannerWithIndicator> {
   int itemCount = 10000;
   int position = 0;
 
-
   @override
   void initState() {
     super.initState();
-    for(int i = 0; i < srcList.length; i++) {
+    for (int i = 0; i < srcList.length; i++) {
       var banner = BannerListWidget(srcLink: srcList[i]);
       list.add(banner);
     }
@@ -48,20 +46,24 @@ class PageViewBannerImpl extends State<AutoBannerWithIndicator> {
   // 每次滑动的时候都会触发 build方法，这很消耗资源的；在cachePageview中，我们会学习如何缓存，类似 Android 的 Glide 的缓存工具；
   @override
   Widget build(BuildContext context) {
-   return Scaffold(
-     appBar: AppBar(
-       title: const Text(
-         "自动播放的banner轮播图",
-         style: TextStyle(
-           fontSize: 24,
-           color: Colors.deepPurple,
-           fontStyle: FontStyle.italic,
-         ),
-       ),
-       backgroundColor: Colors.blue,
-     ),
-     body: BannerStack(list: list, width: double.infinity, height: 320, itemCount: itemCount,),
-   );
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "自动播放的banner轮播图",
+          style: TextStyle(
+            fontSize: 24,
+            color: Colors.deepPurple,
+            fontStyle: FontStyle.italic,
+          ),
+        ),
+        backgroundColor: Colors.blue,
+      ),
+      body: BannerStack(
+        list: list,
+        width: double.infinity,
+        height: 320,
+        itemCount: itemCount,
+      ),
+    );
   }
 }
-

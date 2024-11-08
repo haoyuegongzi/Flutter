@@ -26,23 +26,22 @@ class CustomDialogWidget extends StatefulWidget {
 class CustomDialogFull extends State<CustomDialogWidget> {
   void showCustomDialog() async {
     var result = await showDialog(
-      barrierDismissible: true, //表示点击灰色背景的时候是否消失弹出框
-      context: context,
-      builder: (context) {
-        return PopScope(
-          // 配置：点击 Dialog 以外的区域，Dialog是否消失；canPop = false: 不消失；否则，消失；默认为true；
-          canPop: false,
-          child: CustomDialog(
-            title: '自定义的 Dialog',
-            onClosed: () { // 在 右上角 定义了一个 “ X ”的关闭按钮；
-              print("关闭");
-              Navigator.of(context).pop();
-            },
-            content: "这里显示 Msg 信息"
-          ),
-        );
-      }
-    );
+        barrierDismissible: true, //表示点击灰色背景的时候是否消失弹出框
+        context: context,
+        builder: (context) {
+          return PopScope(
+            // 配置：点击 Dialog 以外的区域，Dialog是否消失；canPop = false: 不消失；否则，消失；默认为true；
+            canPop: false,
+            child: CustomDialog(
+                title: '自定义的 Dialog',
+                onClosed: () {
+                  // 在 右上角 定义了一个 “ X ”的关闭按钮；
+                  print("关闭");
+                  Navigator.of(context).pop();
+                },
+                content: "这里显示 Msg 信息"),
+          );
+        });
   }
 
   @override
@@ -58,15 +57,12 @@ class CustomDialogFull extends State<CustomDialogWidget> {
       ),
       body: Center(
         child: OutlinedButton(
-          // onPressed: () {
-          //   showCustomDialog();
-          // },
-          // 点击按钮，触发方法调用，还可以像下面这样：
-          onPressed: showCustomDialog,
-          child: const Text(
-          "自定义 Dialog"
-          )
-        ),
+            // onPressed: () {
+            //   showCustomDialog();
+            // },
+            // 点击按钮，触发方法调用，还可以像下面这样：
+            onPressed: showCustomDialog,
+            child: const Text("自定义 Dialog")),
       ),
     );
   }
@@ -80,7 +76,7 @@ class CustomDialog extends Dialog {
   CustomDialog(
       {super.key,
       required this.title,
-      required this.onClosed,// 在 右上角 定义了一个 “ X ”的关闭按钮；
+      required this.onClosed, // 在 右上角 定义了一个 “ X ”的关闭按钮；
       this.content = ""});
 
   @override
@@ -88,40 +84,39 @@ class CustomDialog extends Dialog {
     return Material(
       type: MaterialType.transparency,
       child: Center(
-        child: Container(
-          height: 300,
-          width: 300,
-          color: Colors.white,
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(10),
-                child: Stack(
-                  children: <Widget>[
-                    Align(
-                      alignment: Alignment.center,
-                      child: Text(title),
+          child: Container(
+        height: 300,
+        width: 300,
+        color: Colors.white,
+        child: Column(
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Stack(
+                children: <Widget>[
+                  Align(
+                    alignment: Alignment.center,
+                    child: Text(title),
+                  ),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child: InkWell(
+                      onTap: onClosed, // 注意这里 关闭按钮× 点击事件 onClosed 的使用方式
+                      child: const Icon(Icons.close),
                     ),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: InkWell(
-                        onTap: onClosed,// 注意这里 关闭按钮× 点击事件 onClosed 的使用方式
-                        child: const Icon(Icons.close),
-                      ),
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
-              const Divider(),
-              Container(
-                padding: const EdgeInsets.all(10),
-                // width: double.infinity,
-                child: Text(content, textAlign: TextAlign.left),
-              )
-            ],
-          ),
-        )
-      ),
+            ),
+            const Divider(),
+            Container(
+              padding: const EdgeInsets.all(10),
+              // width: double.infinity,
+              child: Text(content, textAlign: TextAlign.left),
+            )
+          ],
+        ),
+      )),
     );
   }
 }

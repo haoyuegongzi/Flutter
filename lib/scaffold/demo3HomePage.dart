@@ -6,9 +6,7 @@ class HomePageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text(
-          "首页"
-      ),
+      child: Text("首页"),
     );
   }
 }

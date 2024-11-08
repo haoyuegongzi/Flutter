@@ -5,6 +5,7 @@ import 'package:dio/dio.dart';
 main() {
   requestGetData();
 }
+
 // json字符串解析为Bean对象的流程：
 // 1、请求接口，拿到服务器返回的数据，比如这里，我们先请求接口: "https://wanandroid.com/harmony/index/json";
 // 2、拿到上面的接口返回来的数据后，完整地复制该数据字符串；
@@ -15,14 +16,17 @@ main() {
 void requestGetData() async {
   var httpDio = Dio();
   var response = await httpDio.get("https://wanandroid.com/harmony/index/json");
-  if(response.statusCode == 200) {
+  if (response.statusCode == 200) {
     print("Dio 网络GET请求：${response.data}\n\n");
     HarmonyBean harmonyBean = HarmonyBean.fromJson(response.data);
 
     // print("Dio 网络GET请求：${harmonyBean.data.toString()}\n\n");
-    print("harmonyBean.data.links 网络GET请求：${harmonyBean.data?.tools?.toString()}\n\n");
-    print("harmonyBean.data.openSources 网络GET请求：${harmonyBean.data?.openSources.toString()}\n\n");
-    print("harmonyBean.data.tools 网络GET请求：${harmonyBean.data?.links.toString()}\n\n");
+    print(
+        "harmonyBean.data.links 网络GET请求：${harmonyBean.data?.tools?.toString()}\n\n");
+    print(
+        "harmonyBean.data.openSources 网络GET请求：${harmonyBean.data?.openSources.toString()}\n\n");
+    print(
+        "harmonyBean.data.tools 网络GET请求：${harmonyBean.data?.links.toString()}\n\n");
 
     // List<ArticleList>? articleList = harmonyBean.data?.links?.articleList;
     // if (articleList!.isNotEmpty) {
@@ -47,12 +51,3 @@ void requestGetData() async {
   }
   httpDio.close();
 }
-
-
-
-
-
-
-
-
-

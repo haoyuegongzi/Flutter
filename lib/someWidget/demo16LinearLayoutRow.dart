@@ -225,13 +225,8 @@ class MyContainer extends StatelessWidget {
   Color viewColor, parentColor;
   double viewSize;
 
-  MyContainer(
-      this.viewColor,
-      this.iconData,
-      this.parentColor,
-      this.viewSize,
-      {super.key}
-      );
+  MyContainer(this.viewColor, this.iconData, this.parentColor, this.viewSize,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -103,13 +103,7 @@ void streamSingleListener() {
   singleStream.add("Bus");
   singleStream.stream.listen((event) {
     print("streamSingleListener: $event");
-  },
-      onError: () {
-
-      },
-      onDone: () {
-
-      });
+  }, onError: () {}, onDone: () {});
   singleStream.close();
 }
 
@@ -124,7 +118,6 @@ void streamMutableListener() {
   });
   mutableStream.add("event bus A");
 
-
   StreamController<String> streamController = StreamController();
   Stream stream = streamController.stream.asBroadcastStream();
   stream.listen((event) {
@@ -134,18 +127,3 @@ void streamMutableListener() {
   mutableStream.close();
   streamController.close();
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

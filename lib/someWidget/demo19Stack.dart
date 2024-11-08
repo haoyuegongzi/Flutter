@@ -51,18 +51,11 @@ class StackWidget extends StatelessWidget {
             height: 200,
           ),
           const Text(
-              "通过这种方式实现文字重叠",
+            "通过这种方式实现文字重叠",
             maxLines: 2,
-            style: TextStyle(
-              color: Colors.purple
-            ),
+            style: TextStyle(color: Colors.purple),
           ),
-          const Text(
-              "这个是叠在上层的文本",
-              style: TextStyle(
-                  color: Colors.black
-              )
-          )
+          const Text("这个是叠在上层的文本", style: TextStyle(color: Colors.black))
         ],
       ),
     );

@@ -1,4 +1,3 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:learnflutterdemo/WrapWidget/demo1CustomWidget.dart';
@@ -88,42 +87,41 @@ class DrawerWidgetHeader extends State<DrawerHeaderWidget> {
   @override
   Widget build(BuildContext context) {
     return Listener(
-      onPointerDown: (PointerDownEvent event) {
-        setEventState(event);
-      },
-      onPointerMove: (PointerMoveEvent event) {
-        setEventState(event);
-      },
-      onPointerCancel: (PointerCancelEvent event) {
-        setEventState(event);
-      },
-      onPointerUp:  (PointerUpEvent event) {
-        setEventState(event);
-      },
-      onPointerPanZoomEnd: (PointerPanZoomEndEvent event) {
-        setEventState(event);
-      },
-      onPointerPanZoomStart: (PointerPanZoomStartEvent event) {
-        setEventState(event);
-      },
-      onPointerPanZoomUpdate: (PointerPanZoomUpdateEvent event) {
-        setEventState(event);
-      },
-      onPointerSignal: (PointerSignalEvent event) {
-        setEventState(event);
-      },
-      child: Container(
-        width: double.infinity,
-        // height: double.infinity,
-        // alignment: Alignment.center,
-        // padding: const EdgeInsets.fromLTRB(4, 2, 4, 2),
-        color: Colors.blueGrey,
-        margin: const EdgeInsetsDirectional.all(4),
-        child: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
-            Text(
-                "这个布局的body部分："
+        onPointerDown: (PointerDownEvent event) {
+          setEventState(event);
+        },
+        onPointerMove: (PointerMoveEvent event) {
+          setEventState(event);
+        },
+        onPointerCancel: (PointerCancelEvent event) {
+          setEventState(event);
+        },
+        onPointerUp: (PointerUpEvent event) {
+          setEventState(event);
+        },
+        onPointerPanZoomEnd: (PointerPanZoomEndEvent event) {
+          setEventState(event);
+        },
+        onPointerPanZoomStart: (PointerPanZoomStartEvent event) {
+          setEventState(event);
+        },
+        onPointerPanZoomUpdate: (PointerPanZoomUpdateEvent event) {
+          setEventState(event);
+        },
+        onPointerSignal: (PointerSignalEvent event) {
+          setEventState(event);
+        },
+        child: Container(
+            width: double.infinity,
+            // height: double.infinity,
+            // alignment: Alignment.center,
+            // padding: const EdgeInsets.fromLTRB(4, 2, 4, 2),
+            color: Colors.blueGrey,
+            margin: const EdgeInsetsDirectional.all(4),
+            child: ListView(
+              scrollDirection: Axis.vertical,
+              children: [
+                Text("这个布局的body部分："
                     "Event事件的size值是：${pointerEvent.size}, \n"
                     "Event事件的distance值是：${pointerEvent.distance}, \n"
                     "Event事件的distanceMax值是：${pointerEvent.distanceMax}, \n"
@@ -138,65 +136,57 @@ class DrawerWidgetHeader extends State<DrawerHeaderWidget> {
                     "Event事件的 radiusMajor 值是：${pointerEvent.radiusMajor}, \n"
                     "Event事件的 radiusMax 值是：${pointerEvent.radiusMax}, \n"
                     "Event事件的 radiusMin 值是：${pointerEvent.radiusMin}, \n"
-                    "Event事件的 radiusMinor 值是：${pointerEvent.radiusMinor}, \n"
-            ),
-            IgnorePointer(
-              child: Listener(
-                child: OutlinedButton(onPressed: (){
-                  setState(() {
-                    print(
-                        "Event事件的 size值是：${pointerEvent.size}, \n"
-                            "Event事件的 distance值是：${pointerEvent.distance}, \n"
-                            "Event事件的 distanceMax值是：${pointerEvent.distanceMax}, \n"
-                            "Event事件的 distanceMin值是：${pointerEvent.distanceMin}, \n"
-                            "Event事件的 localDelta.distance值是：${pointerEvent.localDelta.distance}, \n"
-                            "Event事件的 delta.distance值是：${pointerEvent.delta.distance}, \n"
-                            "Event事件的 localPosition.distance值是：${pointerEvent.localPosition.distance}, \n"
-                            "Event事件的 position.distance 值是：${pointerEvent.position.distance}, \n"
-                            "Event事件的 pressure 值是：${pointerEvent.pressure}, \n"
-                            "Event事件的 pressureMax 值是：${pointerEvent.pressureMax}, \n"
-                            "Event事件的 pressureMin 值是：${pointerEvent.pressureMin}, \n"
-                            "Event事件的 radiusMajor 值是：${pointerEvent.radiusMajor}, \n"
-                            "Event事件的 radiusMax 值是：${pointerEvent.radiusMax}, \n"
-                            "Event事件的 radiusMin 值是：${pointerEvent.radiusMin}, \n"
-                            "Event事件的 radiusMinor 值是：${pointerEvent.radiusMinor}, \n"
-                    );
-                  });
-
-                },
-                    child: const Text("测试 IgnorePointer  忽略指针事件的效果")
+                    "Event事件的 radiusMinor 值是：${pointerEvent.radiusMinor}, \n"),
+                IgnorePointer(
+                  child: Listener(
+                    child: OutlinedButton(
+                        onPressed: () {
+                          setState(() {
+                            print("Event事件的 size值是：${pointerEvent.size}, \n"
+                                "Event事件的 distance值是：${pointerEvent.distance}, \n"
+                                "Event事件的 distanceMax值是：${pointerEvent.distanceMax}, \n"
+                                "Event事件的 distanceMin值是：${pointerEvent.distanceMin}, \n"
+                                "Event事件的 localDelta.distance值是：${pointerEvent.localDelta.distance}, \n"
+                                "Event事件的 delta.distance值是：${pointerEvent.delta.distance}, \n"
+                                "Event事件的 localPosition.distance值是：${pointerEvent.localPosition.distance}, \n"
+                                "Event事件的 position.distance 值是：${pointerEvent.position.distance}, \n"
+                                "Event事件的 pressure 值是：${pointerEvent.pressure}, \n"
+                                "Event事件的 pressureMax 值是：${pointerEvent.pressureMax}, \n"
+                                "Event事件的 pressureMin 值是：${pointerEvent.pressureMin}, \n"
+                                "Event事件的 radiusMajor 值是：${pointerEvent.radiusMajor}, \n"
+                                "Event事件的 radiusMax 值是：${pointerEvent.radiusMax}, \n"
+                                "Event事件的 radiusMin 值是：${pointerEvent.radiusMin}, \n"
+                                "Event事件的 radiusMinor 值是：${pointerEvent.radiusMinor}, \n");
+                          });
+                        },
+                        child: const Text("测试 IgnorePointer  忽略指针事件的效果")),
+                  ),
                 ),
-              ),
-            ),
-            AbsorbPointer(
-              child: Listener(
-                child: OutlinedButton(onPressed: (){
-                  print(
-                      "Event事件的 size值是：${pointerEvent.size}, \n"
-                          "Event事件的 distance值是：${pointerEvent.distance}, \n"
-                          "Event事件的 distanceMax值是：${pointerEvent.distanceMax}, \n"
-                          "Event事件的 distanceMin值是：${pointerEvent.distanceMin}, \n"
-                          "Event事件的 localDelta.distance值是：${pointerEvent.localDelta.distance}, \n"
-                          "Event事件的 delta.distance值是：${pointerEvent.delta.distance}, \n"
-                          "Event事件的 localPosition.distance值是：${pointerEvent.localPosition.distance}, \n"
-                          "Event事件的 position.distance 值是：${pointerEvent.position.distance}, \n"
-                          "Event事件的 pressure 值是：${pointerEvent.pressure}, \n"
-                          "Event事件的 pressureMax 值是：${pointerEvent.pressureMax}, \n"
-                          "Event事件的 pressureMin 值是：${pointerEvent.pressureMin}, \n"
-                          "Event事件的 radiusMajor 值是：${pointerEvent.radiusMajor}, \n"
-                          "Event事件的 radiusMax 值是：${pointerEvent.radiusMax}, \n"
-                          "Event事件的 radiusMin 值是：${pointerEvent.radiusMin}, \n"
-                          "Event事件的 radiusMinor 值是：${pointerEvent.radiusMinor}, \n"
-                  );
-                },
-                    child: const Text("测试 AbsorbPointer 忽略指针事件的效果")
-                ),
-              ),
-            )
-          ],
-        )
-      )
-    );
+                AbsorbPointer(
+                  child: Listener(
+                    child: OutlinedButton(
+                        onPressed: () {
+                          print("Event事件的 size值是：${pointerEvent.size}, \n"
+                              "Event事件的 distance值是：${pointerEvent.distance}, \n"
+                              "Event事件的 distanceMax值是：${pointerEvent.distanceMax}, \n"
+                              "Event事件的 distanceMin值是：${pointerEvent.distanceMin}, \n"
+                              "Event事件的 localDelta.distance值是：${pointerEvent.localDelta.distance}, \n"
+                              "Event事件的 delta.distance值是：${pointerEvent.delta.distance}, \n"
+                              "Event事件的 localPosition.distance值是：${pointerEvent.localPosition.distance}, \n"
+                              "Event事件的 position.distance 值是：${pointerEvent.position.distance}, \n"
+                              "Event事件的 pressure 值是：${pointerEvent.pressure}, \n"
+                              "Event事件的 pressureMax 值是：${pointerEvent.pressureMax}, \n"
+                              "Event事件的 pressureMin 值是：${pointerEvent.pressureMin}, \n"
+                              "Event事件的 radiusMajor 值是：${pointerEvent.radiusMajor}, \n"
+                              "Event事件的 radiusMax 值是：${pointerEvent.radiusMax}, \n"
+                              "Event事件的 radiusMin 值是：${pointerEvent.radiusMin}, \n"
+                              "Event事件的 radiusMinor 值是：${pointerEvent.radiusMinor}, \n");
+                        },
+                        child: const Text("测试 AbsorbPointer 忽略指针事件的效果")),
+                  ),
+                )
+              ],
+            )));
   }
 
   void setEventState(PointerEvent event) {
