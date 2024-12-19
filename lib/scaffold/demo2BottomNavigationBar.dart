@@ -27,6 +27,7 @@ class BottomNavigationWidget extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.blueGrey,
           items: const [
+            // tooltip: 该属性作用如其名：tip，提示，尤其是在PC端或者Web端，控件获取到焦点时，就会弹出提示；
             BottomNavigationBarItem(
               tooltip: "选运动",
               icon: Icon(Icons.home, color: Colors.blue),

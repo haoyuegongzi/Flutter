@@ -21,7 +21,7 @@ main() {
           ),
         ),
       ),
-      body: const HorizontalListView(),
+      body: const MyListImage(),
     )),
   );
 }
@@ -133,34 +133,34 @@ class MyListImage extends StatelessWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(32, 24, 32, 24),
       children: <Widget>[
-        Image.network(
-            height: 320,
-            width: 500,
-            "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"),
-        // Image.asset('images/2xp.jpg'),
+        // Image.network(
+        //     height: 320,
+        //     width: 500,
+        //     "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"),
+        Image.asset('images/2.0x/2xp.jpg'),
         const Divider(),
-        Image.network(
-            height: 320,
-            width: 500,
-            "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"),
-        // Image.asset('images/donghuang.jpg'),
+        // Image.network(
+        //     height: 320,
+        //     width: 500,
+        //     "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"),
+        Image.asset('images/3.0x/donghuang.jpg'),
         const Divider(),
-        Image.network(
-          "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313",
-          height: 320,
-          width: 500,
-        ),
-        // Image.asset('images/px.jpg'),
-        const Divider(),
-        Image.network(
-            height: 320,
-            width: 500,
-            "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"),
-        const Divider(),
-        Image.network(
-            height: 320,
-            width: 500,
-            "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"),
+        // Image.network(
+        //   "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313",
+        //   height: 320,
+        //   width: 500,
+        // ),
+        Image.asset('images/3.0x/px.jpg'),
+        // const Divider(),
+        // Image.network(
+        //     height: 320,
+        //     width: 500,
+        //     "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"),
+        // const Divider(),
+        // Image.network(
+        //     height: 320,
+        //     width: 500,
+        //     "https://img0.baidu.com/it/u=1378072409,595584516&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=313"),
       ],
     );
   }

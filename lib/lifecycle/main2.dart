@@ -5,9 +5,9 @@ void main() => runApp(MyApp2());
 class MyApp extends StatelessWidget {
   String data = "我好帅!";
 
-  MyApp() {
-    Future.delayed(Duration(seconds: 3)).then((s) {
-      this.data = "Lance最帅!";
+  MyApp({super.key}) {
+    Future.delayed(const Duration(seconds: 3)).then((s) {
+      data = "Lance最帅!";
     });
   }
 
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("哈哈"),
+          title: const Text("哈哈"),
         ),
         body: Center(
           child: Text(data),
@@ -38,7 +38,7 @@ class _MyApp2State extends State<MyApp2> {
 
   _MyApp2State() {
     ///Future： Event队列
-    Future.delayed(Duration(microseconds: 1)).then((s) {
+    Future.delayed(const Duration(microseconds: 1)).then((s) {
       debugPrint("1111111111111111");
       this.data = "Lance最帅!";
       ///修改状态 updateState  刷新ui，重绘，调用build方法
@@ -58,7 +58,7 @@ class _MyApp2State extends State<MyApp2> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("哈哈"),
+          title: const Text("哈哈"),
         ),
         body: Center(
           child: Text(data),

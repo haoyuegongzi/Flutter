@@ -37,8 +37,10 @@ class ValuesWidget extends State<ReplaceRoutesValues> {
         child: OutlinedButton(
           onPressed: () {
             // 下面是 跳转到指定界面；从 ItemHomePage 跳转到 本界面；然后通过下面的方式，
-            //      跳转到 “search”路由对应的 RoutesSearchPageByName 界面；
+            //      跳转到 “search”路由对应的 RoutesSearchPageByName 界面，
+            //      然后销毁当前界面，因此不能通过Navigator.of(context).pop()返回到当前界面；
             Navigator.of(context).pushReplacementNamed('/search'); // 也叫 路由替换
+            // Navigator.of(context).pushNamed("/search");
             // 当然，若非是特殊要求，界面的跳转，我们还是应该按照 正常的跳转路由来实现；
           },
           child: Text(

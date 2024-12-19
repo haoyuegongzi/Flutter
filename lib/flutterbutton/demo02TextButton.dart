@@ -29,6 +29,9 @@ class TextButtonWidget extends StatelessWidget {
       onPressed: () {
         print("文本按钮，就如Android里面的TextView？");
       },
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+      ),
       child: const Text(
         "文本按钮，就如Android里面的TextView？",
       ),

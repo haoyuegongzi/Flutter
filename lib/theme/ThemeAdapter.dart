@@ -13,7 +13,7 @@ void main() {
         primarySwatch: Colors.orange/*const MaterialColor(
           1, {1:Colors.blue}
         )*/,// Material风格组件主题颜色
-        backgroundColor: Colors.deepPurple,//与主题对比的颜色，比如进度条默认背景色
+        // backgroundColor: Colors.deepPurple,//与主题对比的颜色，比如进度条默认背景色
         primaryColor: Colors.lightGreen,// 设置ToolBar，TabBar等的背景色
         primaryColorDark: Colors.indigoAccent,
         primaryColorLight: Colors.amberAccent,
@@ -36,8 +36,7 @@ void main() {
                   bottomRight: Radius.circular(10)
               )
           )
-        ),// Card卡片的主题
-        bottomAppBarColor: Colors.lightBlue,
+        ),
         bottomAppBarTheme: const BottomAppBarTheme(),
         bottomNavigationBarTheme: const BottomNavigationBarThemeData(),
         bottomSheetTheme: const BottomSheetThemeData(),
@@ -67,6 +66,7 @@ void main() {
           // 我们在配置 appBarTheme 时，都不能 设置 backgroundColor 这个属性，否则就会报错，抛出异常。
           // backgroundColor: Colors.limeAccent,
         ),
+        // bottomAppBarTheme: BottomAppBarTheme(color: Colors.lightBlue),
       ),
     )
   );

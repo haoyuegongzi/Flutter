@@ -37,7 +37,7 @@ class HomePageState extends State<HomePage> {
   void loadSavedText() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      savedText = prefs.getString('saved_text') ?? '';
+      savedText = prefs.getString('saved_text') ?? '拿到的缓存数据是空的';
     });
   }
 

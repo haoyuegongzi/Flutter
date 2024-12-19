@@ -21,8 +21,7 @@ final Map<String, Function> routesMap = {
       RoutesValues(valuesRoute: arguments),
 };
 
-Route<dynamic>? Function(RouteSettings) onGenerateRoute =
-    (RouteSettings settings) {
+Route<dynamic>? Function(RouteSettings) onGenerateRoute = (RouteSettings settings) {
   // 统一处理路由
   final String? name = settings.name;
   final Function? pageContentBuilder = routesMap[name];

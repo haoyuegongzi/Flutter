@@ -113,7 +113,6 @@ class LoadLocalImage extends StatelessWidget {
   Widget build(BuildContext context) {
     // return ClipOval(
     //   child: Image.asset(
-    //     //  # 下面注意 “-” 和  images 之间的空格，这个绝对不能少
     //     "images/3.0x/3xp.jpg",
     //     width: 600,
     //     height: 600,

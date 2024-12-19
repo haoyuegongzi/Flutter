@@ -18,7 +18,7 @@ main() {
   ));
 }
 
-// Stack: 就是堆叠的意思，一层一层德码起来;
+// Stack: 就是堆叠的意思，一层一层的码起来;
 // Stack组件一般 配合着 Align 或者 Positioned 组件 一起使用。
 // Stack组件里面 嵌套 Positioned 或者 Align 组件。
 class StackPositionedWidget extends StatelessWidget {
@@ -31,7 +31,7 @@ class StackPositionedWidget extends StatelessWidget {
     return Container(
       width: 400,
       height: 400,
-      color: Colors.teal,
+      color: Colors.blue,
       margin: const EdgeInsetsDirectional.all(20),
       // 注意：相对于 父Widget/View 进行定位；如果没有 父Widget/View（比如这里没有 父Widget/View：Container），
       // 那么久相对于整个屏幕（相当于Android中的根布局）进行定位。
@@ -42,42 +42,39 @@ class StackPositionedWidget extends StatelessWidget {
           // 那么，要想让 Positioned在 width宽度方向 或者 height高度方向铺满，实现方式：MediaQuery
           // 另外，Positioned里面的子组件对宽度或者高度有具体要求，那么最好是直接给 Positioned 设置宽度或者高度，不通过他的子组件去设置；否则比较容易出问题。
           Positioned(
-              // 起到相对于 父组件View 的定位。
-              // Positioned 组件内部有7个参数，分别是：上、下、左、右；宽、高；以及 child。
-              // 通过下面的 left + top 两个属性，让 Container 组件及其子组件 Text
-              // 位于父布局Stack的左上角，距离左边距和顶部编剧均为20。
-              // 在这里，Container 组件及其子组件 Text 大小为 自适应 文本 “SizedBox + Text” 的大小；
-              // 如果是想让组件居于左侧底部（left-bottom），则是给 left+bottom 两个参数赋值；
-              // // 居于左上角，详见 StackPositioned1.png
-              // left: 20,
-              // top: 20,
-              // 居于右下角，详见 StackPositioned2.png
-              left: 0,
-              bottom: 10,
-              // 这里，left:0 配合 width: size.width，完美实现了 Positioned-Container 组件水平方向铺满的 需求
-              // 另外，对子组件View的 宽度/高度 有要求时，建议直接在 Positioned 上进行 宽度/高度 的控制、实现。
-              // 详见图
-              width: size.width,
-              height: 50,
-              child: Container(
-                color: Colors.blueGrey,
-                child: const Text("SizedBox + Text"),
-              )),
-          Container(
-            color: Colors.orange,
-            width: 260,
-            height: 260,
+            // 起到相对于 父组件View 的定位。
+            // Positioned 组件内部有7个参数，分别是：上、下、左、右；宽、高；以及 child。
+            // 通过下面的 left + top 两个属性，让 Container 组件及其子组件 Text
+            // 位于父布局Stack的左上角，距离左边距和顶部编剧均为20。
+            // 在这里，Container 组件及其子组件 Text 大小为 自适应 文本 “SizedBox + Text” 的大小；
+            // 如果是想让组件居于左侧底部（left-bottom），则是给 left+bottom 两个参数赋值；
+            // // 居于左上角，详见 StackPositioned1.png
+            // left: 20,
+            // top: 20,
+            // 居于右下角，详见 StackPositioned2.png
+            left: 0,
+            bottom: 10,
+            // 这里，left:0 配合 width: size.width，完美实现了 Positioned-Container 组件水平方向铺满的 需求
+            // 另外，对子组件View的 宽度/高度 有要求时，建议直接在 Positioned 上进行 宽度/高度 的控制、实现。
+            // 详见图
+            width: size.width,
+            height: 50,
+            child: Container(
+              color: Colors.blueGrey,
+              child: const Text("SizedBox + Text"),
+            )
           ),
-          Container(
-            color: Colors.lightBlue,
-            width: 200,
-            height: 200,
-          ),
-          const Text(
-            "通过这种方式实现文字重叠",
-            maxLines: 2,
-            style: TextStyle(color: Colors.purple),
-          ),
+          // Container(
+          //   color: Colors.orange,
+          //   width: 260,
+          //   height: 260,
+          // ),
+          // Container(
+          //   color: Colors.lightBlue,
+          //   width: 200,
+          //   height: 200,
+          // ),
+          const Text("通过这种方式实现文字重叠", maxLines: 2, style: TextStyle(color: Colors.purple)),
           const Text("这个是叠在上层的文本", style: TextStyle(color: Colors.black))
         ],
       ),

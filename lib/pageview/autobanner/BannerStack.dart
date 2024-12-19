@@ -24,7 +24,10 @@ class BannerStackImpl extends State<BannerStack> {
   // pageController = PageController(initialPage: 0, keepPage: true, viewportFraction: 1.0);
   // duraction入参的作用：指定每隔多久执行一次轮播
   PageController pageController = PageController(
-      initialPage: 0, keepPage: true, viewportFraction: 1.0); // 控制器
+      initialPage: 0,
+      keepPage: true,
+      viewportFraction: 1.0
+  ); // 控制器
   late Timer mTimer;
   int position = 0;
 

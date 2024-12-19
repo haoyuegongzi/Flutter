@@ -19,18 +19,14 @@ void main() {
 
 class CupertinoPageRouteAndThemeRouters extends StatelessWidget {
   final Map<String, Function> routesMap = {
-    "/home": (context, {arguments}) =>
-        const CupertinoPageRouteAndThemeHomePage(),
-    "/bill": (context, {arguments}) =>
-        const CupertinoPageRouteAndThemeBillOrder(),
-    "/emergency": (context, {arguments}) =>
-        const CupertinoPageRouteAndThemeEmergency(),
+    "/home": (context, {arguments}) => const CupertinoPageRouteAndThemeHomePage(),
+    "/bill": (context, {arguments}) => const CupertinoPageRouteAndThemeBillOrder(),
+    "/emergency": (context, {arguments}) => const CupertinoPageRouteAndThemeEmergency(),
     "/mine": (context, {arguments}) => const CupertinoPageRouteAndThemeMine(),
     "/first": (context, {arguments}) => const CupertinoPageRouteAndTheme1(),
     "/second": (context, {arguments}) => const CupertinoPageRouteAndTheme2(),
     "/third": (context, {arguments}) => const CupertinoPageRouteAndTheme3(),
-    "/register": (context, {arguments}) =>
-        CupertinoPageRouteAndTheme4(valuesRoute: arguments)
+    "/register": (context, {arguments}) => CupertinoPageRouteAndTheme4(valuesRoute: arguments)
     // 注意，注意，注意：context 后面的参数，必须是/只能是/唯一的 “arguments”；
     //                RoutesRegisterValues 的构造方法里面的 入参，必须跟 RoutesValues 的class类里面定义的一致；
     // 否则，会有意想不到的错误；这个算是固定写法；

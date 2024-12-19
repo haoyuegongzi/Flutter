@@ -244,8 +244,7 @@ class ComplexLayout extends StatelessWidget {
                           child: Container(
                             width: double.infinity,
                             height: double.infinity,
-                            margin: const EdgeInsetsDirectional.fromSTEB(
-                                6, 0, 0, 0),
+                            margin: const EdgeInsetsDirectional.fromSTEB(6, 0, 0, 0),
                             child: Flex(
                               direction: Axis.vertical,
                               children: [

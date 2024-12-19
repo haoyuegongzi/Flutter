@@ -12,7 +12,7 @@ class Demo26DecoratedBox extends StatelessWidget {
     return Center(
       child: DecoratedBox(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(6),
             gradient: const RadialGradient(
                 colors: [Colors.red, Colors.green, Colors.blue]),
             boxShadow: const [
@@ -20,7 +20,7 @@ class Demo26DecoratedBox extends StatelessWidget {
                   color: Colors.blueGrey,
                   offset: Offset(2.0, 2.0),
                   blurRadius: 5.0,
-                  spreadRadius: 10.0)
+                  spreadRadius: 3.0)
             ]),
         child: const Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 48.0),

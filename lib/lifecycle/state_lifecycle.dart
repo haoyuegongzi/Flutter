@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
-  bool isShowChild;
+class MyAppState extends State<MyApp> {
+  late bool isShowChild;
 
   ///当Widget第一次插入到Widget树时会被调用，对于每一个State对象，Flutter framework只会调用一次该回调
   @override
@@ -33,14 +35,14 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-            child: RaisedButton(
+            child: ElevatedButton(
               ///点击事件
           onPressed: () {
             setState(() {
               isShowChild = !isShowChild;
             });
           },
-          child: isShowChild ? Child():Text("111111"),
+          child: isShowChild ? Child():const Text("111111"),
         )),
       ),
     );
@@ -71,14 +73,14 @@ class _MyAppState extends State<MyApp> {
 
 class Child extends StatefulWidget {
   @override
-  _ChildState createState() => _ChildState();
+  ChildState createState() => ChildState();
 }
 
-class _ChildState extends State<Child> {
+class ChildState extends State<Child> {
   @override
   Widget build(BuildContext context) {
     debugPrint("child build......");
-    return Text('lifeCycle');
+    return const Text('lifeCycle');
   }
 
   @override

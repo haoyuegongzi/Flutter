@@ -270,6 +270,7 @@ class CreateHomeTab extends State<HomeTab> with SingleTickerProviderStateMixin {
       // 我们需要将 BottomNavigationBar的 type属性 特别设置为 BottomNavigationBarType.fixed，item才会显示正常。
       // 但Item数量在3个及以下时，设置该属性，会运行失败。
       // type属性默认是 BottomNavigationBarType.shifting。
+      // 这里有对 BottomNavigationBar 各属性的详细介绍：https://segmentfault.com/a/1190000044993420
       bottomNavigationBar: BottomNavigationBar(
         // type: BottomNavigationBarType.shifting,
         type: BottomNavigationBarType.fixed,
@@ -282,7 +283,7 @@ class CreateHomeTab extends State<HomeTab> with SingleTickerProviderStateMixin {
         selectedIconTheme: const IconThemeData(color: Colors.green),
         unselectedIconTheme: const IconThemeData(color: Colors.black26),
         backgroundColor: Colors.white,
-        iconSize: 20,
+        iconSize: 20, // 导航项图标的大小，默认值为 24.0
         // 下面几行是实现 底部导航栏 实现 点击选中 效果的关键；
         currentIndex: currenPosition,
         onTap: (index) {

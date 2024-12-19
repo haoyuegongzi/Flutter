@@ -25,10 +25,9 @@ class RoutersName extends StatelessWidget {
     "/first": (context, {arguments}) => const RoutesRegisterFirst(),
     "/second": (context, {arguments}) => const RoutesRegisterSecond(),
     "/third": (context, {arguments}) => const RoutesRegisterThird(),
-    "/register": (context, {arguments}) =>
-        RoutesRegisterValues(valuesRoute: arguments)
+    "/register": (context, {arguments}) => RoutesRegisterValues(valuesRoute: arguments)
     // 注意，注意，注意：context 后面的参数，必须是/只能是/唯一的 “arguments”；
-    //                RoutesRegisterValues 的构造方法里面的 入参，必须跟 RoutesValues 的class类里面定义的一致；
+    //                RoutesRegisterValues 的构造方法里面的 入参，必须跟 valuesRoute 的class类里面定义的一致；
     // 否则，会有意想不到的错误；这个算是固定写法；
   };
 

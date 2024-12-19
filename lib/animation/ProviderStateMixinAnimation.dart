@@ -1,9 +1,10 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 main() {
-  runApp(const SingleTickerProviderStateMixinAnimation());
+  // runApp(const SingleTickerProviderStateMixinAnimation());
+  runApp(const TickerProviderStateMixinAnimation());
+
 }
 
 class SingleTickerProviderStateMixinAnimation extends StatelessWidget {
@@ -53,7 +54,25 @@ class MySingleAnimationState extends State<MySingleAnimation> with SingleTickerP
   }
 }
 
-class _MyMultipleAnimationState extends State<MyMultipleAnimation> with TickerProviderStateMixin {
+///////////////////////////////////////////////////////////////////////////////////
+
+class TickerProviderStateMixinAnimation extends StatelessWidget {
+  const TickerProviderStateMixinAnimation({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MyMultipleAnimation();
+  }
+}
+
+class MyMultipleAnimation extends StatefulWidget {
+  const MyMultipleAnimation({super.key});
+
+  @override
+  MyMultipleAnimationState createState() => MyMultipleAnimationState();
+}
+
+class MyMultipleAnimationState extends State<MyMultipleAnimation> with TickerProviderStateMixin {
   late AnimationController _controller1;
   late AnimationController _controller2;
   @override
@@ -62,10 +81,16 @@ class _MyMultipleAnimationState extends State<MyMultipleAnimation> with TickerPr
     _controller1 = AnimationController(
       duration: const Duration(seconds: 2),
       vsync: this,
+      // 下面两个参数用于指定动画的起始值startValue和终值endValue
+      lowerBound: 0.1,
+      upperBound: 1.0
     )..repeat(reverse: true);
     _controller2 = AnimationController(
       duration: const Duration(seconds: 1),
       vsync: this,
+      // 下面两个参数用于指定动画的起始值startValue和终值endValue
+      lowerBound: 0.1,
+      upperBound: 1.0
     )..repeat(reverse: true);
   }
   @override

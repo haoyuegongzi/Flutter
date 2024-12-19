@@ -67,6 +67,16 @@ class PaddingWidgetMarginPading extends StatelessWidget {
       // 上面的 margin 属性是 Container Widget组件相对于其 父组件 Scaffold Widget 之间的（外）间距。
       // 上面的 padding 属性是 Container Widget组件相对于其 子组件 Padding Widget 之间的（内）间距
       color: Colors.blue,
+      //// color 和 decoration同时设置的话，运行时会直接抛出异常，提示二者只能存在一个，二者之间不存在谁的优先级高，覆盖谁的问题。
+      // decoration: const BoxDecoration(
+      //   // 这里需要对position 做取余处理；类似Android的 adapter 中position的操作；
+      //   // 否则，position大小超过 list.length 之后，指示器颜色根据选中位置的变化，就不再生效；
+      //   // 这个取模操作，既可以在下面的位置完成，也可以在上面的 setState()方法完成；
+      //   color: Colors.grey,
+      //   // shape 或者下面的 borderRadius 实现方式，都可以创建一个原点。
+      //   shape: BoxShape.circle,
+      //   // borderRadius: BorderRadius.circular(5),//指示器显示为原点
+      // ),
       child: const Padding(
         // 这里的 padding 属性是 Padding Widget组件相对于其 内部 内容 的内间距。
         // 在内间距实现 方面，Padding Widget组件 所占用的内存远比 Container Widget组件要小，
